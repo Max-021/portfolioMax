@@ -1,0 +1,17 @@
+
+
+
+@import '../components/navbar/navbar.scss';
+
+//general
+// .linksNav a{
+//     font-size: 150%;
+//     text-decoration: none;
+//     color: white;
+// }
+
+//Layout
+.main-container{
+    margin-top: 64px;
+    min-height: calc(100vh - 64px);
+}

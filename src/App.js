@@ -1,24 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {Routes, Route,} from 'react-router-dom';
+import './sass/App.scss';
 
-function App() {
+import Auxiliary from './hoc/Auxiliary';
+
+import Layout from './pages/Layout';
+import Landpage from './pages/Landpage';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Portfolio from './pages/Portfolio';
+
+
+// aca acomodar para que la landpage no tenga navbar y tenga una vista distinta
+
+const App = () => {
+  
+  const routes = (
+    <Routes>
+      <Route path='/about' element={<About/>}/>
+      <Route path='/portfolio' element={<Portfolio/>}/>
+      <Route path='/contact' element={<Contact/>}/>
+      <Route path='/' element={<Landpage/>}/>
+    </Routes>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Auxiliary>
+      <Layout>
+        {routes}
+      </Layout>
+    </Auxiliary>
   );
 }
 
