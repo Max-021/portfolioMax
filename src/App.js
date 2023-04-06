@@ -15,20 +15,20 @@ import Portfolio from './pages/Portfolio';
 
 const App = () => {
   
-  const routes = (
-    <Routes>
-      <Route path='/about' element={<About/>}/>
-      <Route path='/portfolio' element={<Portfolio/>}/>
-      <Route path='/contact' element={<Contact/>}/>
-      <Route path='/' element={<Landpage/>}/>
-    </Routes>
-  );
-
   return (
     <Auxiliary>
-      <Layout>
+      <Routes>
+        <Route path='/' element={<Landpage/>}/>
+        <Route element={<Layout/>}>
+          <Route path='/about' element={<About/>}/>
+          <Route path='/portfolio' element={<Portfolio/>}/>
+          <Route path='/contact' element={<Contact/>}/>
+        </Route>
+      </Routes>
+
+      {/* <Layout>
         {routes}
-      </Layout>
+      </Layout> */}
     </Auxiliary>
   );
 }

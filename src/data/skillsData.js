@@ -1,23 +1,60 @@
+import {FaJs, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaVuejs, FaLaravel, FaPhp, FaSass} from 'react-icons/fa'
+import {SiMongodb, SiMysql} from 'react-icons/si'
 
 export const skill = [
     {
         name:"Javascript",
-        img: "https://upload.wikimedia.org/wikipedia/commons/7/73/Javascript-736400_960_720.png",
+        img: <FaJs/>,
+        porcentaje: '75',
     },
     {
-        name:"HtmlCss",
-        img: "https://upload.wikimedia.org/wikipedia/commons/1/10/CSS3_and_HTML5_logos_and_wordmarks.svg",
+        name:"Html",
+        img: <FaHtml5/>,
+        porcentaje: '65',
+    },
+    {
+        name:"Css",
+        img: <FaCss3Alt/>,
+        porcentaje: '65',
+    },
+    {
+        name: "Sass",
+        img: <FaSass/>,
+        porcentaje: '55',
     },
     {
         name:"React",
-        img: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
+        img: <FaReact/>,
+        porcentaje: '65',
     },
     {
         name:"Node",
-        img: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg",
+        img: <FaNodeJs/>,
+        porcentaje: '50',
     },
     {
-        name:"Php",
-        img: "https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg",
+        name: "MongoDb",
+        img: <SiMongodb/>,
+        porcentaje: '50',
+    },
+    {
+        name: "Vuejs",
+        img: <FaVuejs/>,
+        porcentaje: '65',
+    },
+    {
+        name: "Php",
+        img: <FaPhp/>,
+        porcentaje: '55',
+    },
+    {
+        name: "Laravel",
+        img: <FaLaravel/>,
+        porcentaje: '55',
+    },
+    {
+        name: "Mysql",
+        img: <SiMysql/>,
+        porcentaje: '55',
     },
 ]

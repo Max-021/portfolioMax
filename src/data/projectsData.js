@@ -14,10 +14,17 @@ export const projects = [
         skillInfo:"Html, Css, Javascript"
     },
     {
-        url:"https://www.maximilianohombres.com.ar",
+        url:"portfolio url",
         name:"Personal Portfolio",
         descr:"This is my personal portfolio! I designed it with the purpose of showing part of my skills at web development, I made it using react, and more technologies",
         urlImg:"/portada.png",
         skillInfo:"React, Javascript, Html, Css, Json"
+    },
+    {
+        url:"ingeray url",
+        name:"Ingeray",
+        descr:"This is my personal portfolio! I designed it with the purpose of showing part of my skills at web development, I made it using react, and more technologies",
+        urlImg:"/portada.png",
+        skillInfo:"Vue, Html, Css, Javascript,"
     },
 ]

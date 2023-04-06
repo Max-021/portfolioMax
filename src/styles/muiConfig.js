@@ -5,7 +5,6 @@ export const configBox = {
 export const centerMui = {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '120px'
 }
 
 export const formBox = {
