@@ -1,5 +1,6 @@
 import React from 'react'
 import LinkCard from '../components/landpageComps/LinkCard'
+import AnimatedBg from '../components/landpageComps/AnimatedBg'
 
 const routes = [
   {
@@ -23,9 +24,10 @@ const routes = [
 const Landpage = () => {
   return (
     <div className='landpage-section'>
+      <AnimatedBg/>
       <div className='card-container'>
         {routes.map((ruta,index) => {
-          return <LinkCard {...ruta}/>
+          return <LinkCard {...ruta} key={index}/>
         })}
       </div>
     </div>

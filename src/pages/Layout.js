@@ -5,8 +5,6 @@ import { Outlet } from 'react-router-dom'
 
 import Auxiliary from '../hoc/Auxiliary'
 
-// falta hacer que el navbar no aparezca en el home
-
 const Layout = (props) => {
   return (
     <Auxiliary>
