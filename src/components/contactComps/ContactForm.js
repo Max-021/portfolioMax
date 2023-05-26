@@ -3,17 +3,9 @@ import Box  from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
 import { formBox } from '../../styles/muiConfig'
+import emailjs from '@emailjs/browser'
 
-
-//aca construir el formulario usando los componentes que aparecen en INPUT en la documentacion de React MUI
-//tambien definir las diferencias entre FormControl y FormGroup para saber donde van cada una
-//resolver si necesito una dependencia para el envio de mails una vez VALIDADO el formulario
-
-/* COMPONENTES A USAR
-
-  TEXTFIELD  BOX  
-
-*/
+// VALIDAR LOS DATOS DEL FORMULARIO ANTES DE ENVIARLO
 
 const ContactForm = () => {
 
@@ -24,8 +16,22 @@ const ContactForm = () => {
   })
   const submitData = (e) => {
     e.preventDefault();
-    console.log(msgInfo);//borrar esto ni bien pueda
-    alert('CODEAR: envío del mensaje por mail y la seguridad del envío!!!!!! en contactForm.js')
+    const mailInfo = {
+      request_name: msgInfo.name,
+      request_mail: msgInfo.mail,
+      request_message: msgInfo.message,
+    }
+    emailjs.send('service_7bgpx1f','template_6fcb4z4',mailInfo,'objvruOQEA3DNzdjE')
+      .then(response => {
+        setMsgInfo({
+          name: '',
+          mail: '',
+          message:'',
+        })
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
   const handleChange = (e) => {
     setMsgInfo({
@@ -35,9 +41,9 @@ const ContactForm = () => {
   }
   return (
     <Box component='form' onSubmit={submitData}  sx={formBox}>
-      <TextField required label="Name"    onChange={handleChange} name='name' id="name-input" margin='dense' />
-      <TextField required label="Email"   onChange={handleChange} name='mail' id="email-input" margin='dense' type="email"/>
-      <TextField required label="Message" onChange={handleChange} name='message' id="msg-input" margin='dense' multiline minRows={4} maxRows={8}/>
+      <TextField required label="Name"    value={msgInfo.name}    onChange={handleChange} name='name' id="name-input" margin='dense' />
+      <TextField required label="Email"   value={msgInfo.mail}    onChange={handleChange} name='mail' id="email-input" margin='dense' type="email"/>
+      <TextField required label="Message" value={msgInfo.message} onChange={handleChange} name='message' id="msg-input" margin='dense' multiline minRows={4} maxRows={8}/>
       <Button type='submit'>Send</Button>
     </Box>
   )

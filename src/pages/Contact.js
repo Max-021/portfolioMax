@@ -5,15 +5,14 @@ import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 //ver video de como hacer un formulario en react mui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-import {centerMui} from '../styles/muiConfig';
+import {centerMui, contactListPosition, iconStyle} from '../styles/muiConfig';
 import {contactInfo} from '../data/navData';
 import ContactForm from '../components/contactComps/ContactForm';
 import Fhcontainer from '../hoc/Fhcontainer';
 
 const Contact = () => {
-
+  //ACA AGREGAR UN EFECTO PARA EL COPYMAIL
   const copyMail = (indice,mail) => {
     console.log('clicked')
     if(indice === 0) {
@@ -30,27 +29,27 @@ const Contact = () => {
           <p>agregar texto para tipo: ponte en contacto para lo que sea!</p>
           <ContactForm/>
         </Box>
-        <Box>
-          <List>
-            {contactInfo.map((info,index) => {
-              const {name,icon,link} = info;
-              return <ListItemButton key={index} onClick={() => copyMail(index,name)}>
-                      <ListItemIcon>
-                        {icon}
-                      </ListItemIcon>
-                      {index > 0 
-                        ? <ListItemText>
-                          <a href={link} target='_blank' rel='noreferrer'>
-                            {name}
-                          </a>
-                        </ListItemText> 
-                        : <ListItemText primary={name} />
-                        }
-                      </ListItemButton>
-            })}
-          </List>
-        </Box>
       </Stack>
+      <Box>
+        <List className='contactIcons' sx={contactListPosition}>
+          {contactInfo.map((info,index) => {
+            const {name,icon,link} = info;
+            return index > 0 
+                    ? 
+                      <a href={link} target='_blank' rel="noreferrer">
+                        <ListItemButton key={index}>
+                          <ListItemIcon sx={iconStyle}>
+                            {icon}
+                          </ListItemIcon>
+                        </ListItemButton>
+                      </a>
+                    : 
+                      <ListItemButton key={index} onClick={() => copyMail(index,name)}>
+                        <ListItemIcon sx={iconStyle}>{icon}</ListItemIcon>
+                      </ListItemButton>
+          })}
+        </List>
+      </Box>
     </Fhcontainer>
   );
 }
