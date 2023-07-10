@@ -46,12 +46,14 @@ a{
 }
 //about section
 .about-section {
-    background-color: darkgray;
+    background-color: $lightColor;
+    color: $lightColor;
     @include center-flex();
 }
 .about-position {
     width: 70%;
     @include center-flex(row, space-around, flex-start);
+    z-index: 5;
 }
 .about-info {
     width: 450px;
@@ -60,6 +62,11 @@ a{
     width: 300px;
     display: flex;
     flex-direction: column;
+    gap: 4px;
+    color: $darkColor;
+    font-weight: bold;
+    background-color: $lightColor;
+    padding: 0.7rem;
 }
 .skillCard{
     display: flex;
@@ -67,12 +74,19 @@ a{
 }
 .skill-bar{
     height: 12px;
-    background-color: black;
+    background-color: $darkColor;
 }
 .bar-value{
     height: 100%;
-    background-color: lightcoral;
+    background-color: $firstColor;
 }
+// .iconfont{
+//     font-size: 950%; 
+// }
+// .iconinnner{
+//     display: inline;
+//     padding: 24px;
+// }
 // contact section
 .contact-section {
     @include center-flex();

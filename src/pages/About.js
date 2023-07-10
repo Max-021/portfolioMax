@@ -4,11 +4,13 @@ import { skill } from '../data/skillsData';
 import { text } from '../data/aboutData/textEn';
 import Fhcontainer from '../hoc/Fhcontainer';
 
+// import AboutBkg from '../components/aboutComps/AboutBkg';
 import SkillCard from '../components/aboutComps/SkillCard';
 
 const About = () => {
   return (
     <Fhcontainer clase={`about-section`}>
+      {/* <AboutBkg/> */}
       <Box className='about-position'>
         <Box className='about-info'>
           <h2>About me</h2>
