@@ -13,6 +13,9 @@ $firstColor: #FFB100;
 $secondColor: #9C528B;
 $darkColor: #153243;
 $lightColor: #EEF0EB;
+$lightColorShade:hsl(84, 24%, 70%);
+
+$margenSuperior: 64px;
 
 //general
 a{
@@ -27,7 +30,6 @@ a{
 .main-container{
     padding-top: 64px;
     min-height: calc(100vh - 64px);
-    background-color: grey;
 }
 //landpage
 .landpage-section {
@@ -46,7 +48,7 @@ a{
 }
 //about section
 .about-section {
-    background-color: $lightColor;
+    background-color: $darkColor;
     color: $lightColor;
     @include center-flex();
 }
@@ -92,8 +94,26 @@ a{
     @include center-flex();
     background-color: $lightColor;
 }
+.top{
+    position: absolute;
+    height: 0;
+    width: 0;
+    top: 0;
+    margin-top: $margenSuperior;
+    border-left: 50vw solid transparent;
+    border-right: 50vw solid transparent;
+    border-bottom: 150px solid transparent;
+    border-top: 180px  solid $lightColorShade;
+    opacity: 0.2;
+}
+
 .contactIcons {
     @include center-flex(column, center,center);
+}
+.copiedAlert{
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
 }
 //portfolio section
 .portfolio-upper-section{

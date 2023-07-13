@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Box  from '@mui/material/Box'
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
+import Alert from '@mui/material/Alert';
+import Collapse from '@mui/material/Collapse';
 //ver video de como hacer un formulario en react mui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 import {centerMui, contactListPosition, iconStyle} from '../styles/muiConfig';
 import {contactInfo} from '../data/navData';
@@ -12,17 +14,23 @@ import ContactForm from '../components/contactComps/ContactForm';
 import Fhcontainer from '../hoc/Fhcontainer';
 
 const Contact = () => {
+
+  const [copied, setCopied] = useState(false)
   //ACA AGREGAR UN EFECTO PARA EL COPYMAIL
   const copyMail = (indice,mail) => {
     console.log('clicked')
     if(indice === 0) {
       navigator.clipboard.writeText(mail)
-      alert('falta hacer un pequeño popup que diga copied to clipboard')
+      setCopied(true)
+      setTimeout(() => {
+        setCopied(false)
+      }, 1500);
     }
   }
   
   return (
     <Fhcontainer clase={`contact-section`}>
+      <div className='top'></div>
       <Stack direction={{md:'column', lg:'column'}} sx={centerMui} divider={<Divider orientation='vertical' flexItem/>} spacing={5}>        
         <Box>
           <h2>Get in touch!</h2>
@@ -50,6 +58,9 @@ const Contact = () => {
           })}
         </List>
       </Box>
+      <Collapse className='copiedAlert' in={copied}>
+        <Alert variant='filled' severity='success' >Copied to clipboard!</Alert>
+      </Collapse>
     </Fhcontainer>
   );
 }
