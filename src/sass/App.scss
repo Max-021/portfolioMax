@@ -8,11 +8,17 @@
     justify-content: $main;
     align-items: $cross;
 }
+@mixin allSpace() {
+    width:100%;
+    height: 100%;
+}
 //variables
 $firstColor: #FFB100;
 $secondColor: #9C528B;
 $darkColor: #153243;
 $lightColor: #EEF0EB;
+
+$darkColorShade: hsl(202, 30%, 10%);
 $lightColorShade:hsl(84, 24%, 70%);
 
 $margenSuperior: 64px;
@@ -116,6 +122,9 @@ a{
     right: 1%;
 }
 //portfolio section
+.portfolio-section {
+    background-color: $darkColor;
+}
 .portfolio-upper-section{
     height: 150px;
     background-color: black;
@@ -131,11 +140,65 @@ a{
 }
 .projects-container{
     width: 100%;
-    @include center-flex(row, center, flex-start);
+    @include center-flex(row, flex-start, flex-start);
+    flex-wrap: wrap;
 }
 .project-card {
     width: calc(100% / 4);
     aspect-ratio: 1/1;
-    background-color: beige;
-    border: 1px solid brown;
+    overflow: hidden;
+}
+.project-description{
+    width: 100%;
+    height: 100px;
+    padding: 0 4px;
+    opacity: 0;
+    background-color: #000000c5;
+    transform: translateY(100px);
+    transition: all 0.7s;
+}
+.project-description > h2,p {
+    margin: 0;
+}
+.project-description > p {
+    margin-top: 12px
+}
+
+.portfolio-project {
+    background-image: url('../assets/images/portfolio/portfolioproject.png');
+}
+.ingeray-project {
+    background-image: url('../assets/images/portfolio/portadaingeray.png');
+}
+
+.portfolio-project,
+.ingeray-project{
+    position: relative;
+    @include allSpace;
+    background-size: cover;
+    transition: 0.7s all;
+    transform: scale(1.4);
+    @include center-flex(column, flex-end, flex-start);
+}
+.portfolio-project:hover,
+.ingeray-project:hover {
+    transform: scale(1);
+    .project-description {
+        opacity: 1;
+        transform: translateY(0);
+        color: $lightColor;
+    }
+}
+.expanded-card-content{
+    background-color: $darkColorShade;
+    color: $lightColor;
+    padding: 6px !important;
+}
+.expanded-card-content a {
+    color: $firstColor !important;
+}
+.card-link{
+    text-decoration: none;
+    color: black;
+    padding-bottom: 12px;
 }

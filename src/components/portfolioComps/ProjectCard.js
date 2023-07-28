@@ -1,12 +1,15 @@
 import React from 'react'
 
-// revisar el componente card de react mui
-const ProjectCard = ({url,name,descr,urlImg,skillInfo}) => {
+const ProjectCard = ({name,descr,urlImg, clicked}) => {
 
-    console.log(name)
   return (
-    <div className='project-card'>
-        es una project card
+    <div className={`project-card`} onClick={clicked}>
+      <div className={urlImg}>
+        <div className='project-description'>
+          <h2>{name}</h2>
+          <p>{descr.substring(0,30)}</p>
+        </div>
+      </div>
     </div>
   )
 }
