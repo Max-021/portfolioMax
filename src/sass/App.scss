@@ -1,6 +1,15 @@
 @import '../components/navbar/navbar.scss';
 @import '../components/landpageComps/linkCard.scss';
 
+@font-face {
+    font-family: "serifFont";
+    src: url('../assets/fonts/Quattrocento-Regular.ttf')format('truetype');
+}
+@font-face {
+    font-family: 'sansFont';
+    src: url('../assets/fonts/QuattrocentoSans-Regular.ttf')format('truetype');
+}
+
 //mixins
 @mixin center-flex($direction: row,$main: center, $cross: center) {
     display: flex;
@@ -12,12 +21,22 @@
     width:100%;
     height: 100%;
 }
+@mixin mainFont($size: 100%) {
+    font-family: serifFont, Times, serif !important;
+    font-size: $size;
+}
+@mixin titleFont($size: 100%) {
+    font-family: sansFont, Times, serif !important;
+    font-size: $size;
+}
 //variables
 $firstColor: #FFB100;
 $secondColor: #9C528B;
 $darkColor: #153243;
 $lightColor: #EEF0EB;
+$lightColorOpacity: #eef0ebe3;
 
+$secondColorShade: hsl(314, 55%, 40%);
 $darkColorShade: hsl(202, 30%, 10%);
 $lightColorShade:hsl(84, 24%, 70%);
 
@@ -28,7 +47,12 @@ a{
     text-decoration: none;
     color: black;
 }
-
+.titles{
+    @include titleFont();
+}
+.general{
+    @include mainFont();
+}
 //Layout
 .landpage-container {
     min-height: 100vh;
@@ -54,7 +78,9 @@ a{
 }
 //about section
 .about-section {
-    background-color: $darkColor;
+    background: rgb(29,71,96);
+    background: radial-gradient(circle, rgba(29,71,96,1) 0%, rgba(26,39,47,1) 90%); 
+    // background-color: $darkColor;
     color: $lightColor;
     @include center-flex();
 }
@@ -71,30 +97,37 @@ a{
     display: flex;
     flex-direction: column;
     gap: 4px;
-    color: $darkColor;
+    color: $lightColor;
     font-weight: bold;
-    background-color: $lightColor;
     padding: 0.7rem;
+    border: 3px solid $secondColor;
 }
-.skillCard{
-    display: flex;
-    flex-direction: column;
-}
-.skill-bar{
-    height: 12px;
+.about-skills-title{
+    width: fit-content;
+    padding: 0 6px;
+    margin-top: -28px !important;
     background-color: $darkColor;
+    z-index: 1;
 }
-.bar-value{
-    height: 100%;
-    background-color: $firstColor;
+.skill-group-card{
+    font-size: 200%;//CAMBIAR, ES SOLO TEMPORAL
+    color: $darkColor;
+    // border: $lightColor 1px solid;
+    // border-radius: 10px;
+    filter: drop-shadow(10px 10px 10px #000);
 }
-// .iconfont{
-//     font-size: 950%; 
-// }
-// .iconinnner{
-//     display: inline;
-//     padding: 24px;
-// }
+.skill-detail-card{
+    display: inline-block;
+    color: $secondColorShade;
+    background-color: $lightColorOpacity;
+    padding: 4px;
+    margin: 4px;
+    border-radius: 10px;
+    z-index: 1;
+}
+.skill-name {
+    color: black;
+}
 // contact section
 .contact-section {
     @include center-flex();

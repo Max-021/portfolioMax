@@ -1,6 +1,7 @@
 import React from 'react'
 import Box  from '@mui/material/Box'
-import { skill } from '../data/skillsData';
+import Typography from '@mui/material/Typography';
+import { skillGroup } from '../data/skillsData';
 import { text } from '../data/aboutData/textEn';
 import Fhcontainer from '../hoc/Fhcontainer';
 
@@ -13,17 +14,18 @@ const About = () => {
       {/* <AboutBkg/> */}
       <Box className='about-position'>
         <Box className='about-info'>
-          <h2>About me</h2>
+          <Typography className='titles' variant='h2' gutterBottom>About me</Typography>
           {text.map((texto, index) => {
-            return <div key={index}>
-              <p>{texto}</p>
-            </div>;
+            return <Typography className='general' gutterBottom key={index}>
+              {texto}
+            </Typography>
           })}
         </Box>
         <Box className='about-skills'>
-          {skill.map((item,index) => {
-            const {name,porcentaje} = item;
-            return <SkillCard key={index} name={name} porcentaje={porcentaje}/>
+          <Typography className='about-skills-title titles' variant='h5'>Skills</Typography>
+          {skillGroup.map((item,index) => {
+            const {groupName,skills} = item;
+            return <SkillCard key={index} skillGroupName={groupName} skills={skills}/>
           })}
         </Box>
       </Box>

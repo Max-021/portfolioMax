@@ -16,7 +16,7 @@ export const projects = [
         skillInfo:"Vue, Html, Css, Javascript, Php, Laravel, Mysql, Nodejs, MongoDb"
     },
     {
-        url:"portfolio url",
+        url:"/",
         name:"Personal Portfolio",
         descr:"This is my personal portfolio! I designed it with the purpose of showing part of my skills at web development, I made it using react, and more technologies",
         urlImg:"portfolio-project",
