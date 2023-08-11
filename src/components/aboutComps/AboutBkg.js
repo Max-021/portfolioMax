@@ -1,26 +1,47 @@
 import React, {useCallback} from 'react'
 import Particles from 'react-particles'
 import { loadFull } from 'tsparticles'
-import { skill } from '../../data/skillsData'
 
-import { ReactSVG } from 'react-svg'
-
-
-// import JS from '../../assets/images/js.svg'
-import JS from '../../assets/images/js-square.svg'
+//fronticons, tambien incluye Php
+import JS from '../../assets/images/js.svg'
 import Html from '../../assets/images/html5.svg'
 import Css from '../../assets/images/css3.svg'
 import Sass from '../../assets/images/sass.svg'
 import LogoReact from '../../assets/images/react.svg'
-import Node from '../../assets/images/node-js.svg'
-import MongoDb from '../../assets/images/mongodb.svg'
 import Vue from '../../assets/images/vuejs.svg'
+//backicons
+import Node from '../../assets/images/node-js.svg'
 import Php from '../../assets/images/php.svg'
 import Laravel from '../../assets/images/laravel.svg'
+//dbicons
+import MongoDb from '../../assets/images/mongodb.svg'
 import MySQL from '../../assets/images/mysql.svg'
+
+const dbIcons = [MongoDb,MySQL].map((el) => {
+  return {
+    src:el,
+    width: 300,
+    height:300,
+  }
+})
+const frontIcons = [JS,Html,Css,Sass,LogoReact,Vue,Php].map((el) => {
+  return {
+    src:el,
+    width: 300,
+    height:300,
+  }
+})
+const backIcons = [Node,Php,Laravel].map((el) => {
+  return {
+    src:el,
+    width: 300,
+    height:300,
+  }
+})
 
 const AboutBkg = (props) => {
 
+  // const [ActiveGroup,setActiveGroup] = useState(props.IconsSet);
   const options = {
     detectRetina: true,
     fpsLimit: 60,
@@ -137,63 +158,7 @@ const AboutBkg = (props) => {
       },
       shape: {
         type: "images",
-        image: [
-          {
-            src: JS,
-            width: 300,
-            height: 300,
-            color: '#9C528B',
-          },
-          {
-            src: Html,
-            width: 300,
-            height: 300,
-            color: '#9C528B',
-          },
-          {
-            src: Css,
-            width: 300,
-            height: 300
-          },
-          {
-            src: Sass,
-            width: 300,
-            height: 300
-          },
-          {
-            src: LogoReact,
-            width: 300,
-            height: 300
-          },
-          {
-            src: Node,
-            width: 300,
-            height: 300
-          },
-          {
-            src: MongoDb,
-          },
-          {
-            src: Vue,
-            width: 300,
-            height: 300
-          },
-          {
-            src: Php,
-            width: 350,
-            height: 300
-          },
-          {
-            src: Laravel,
-            width: 300,
-            height: 300
-          },
-          {
-            src: MySQL,
-            width: 400,
-            height: 300
-          },
-        ],
+        image: props.IconsSet === 'db' ? dbIcons : props.IconsSet === 'fe' ? frontIcons : backIcons ,
       },
       size: {
         animation: {

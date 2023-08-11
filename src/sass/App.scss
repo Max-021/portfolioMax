@@ -103,11 +103,28 @@ a{
     border: 3px solid $secondColor;
 }
 .about-skills-title{
-    width: fit-content;
     padding: 0 6px;
-    margin-top: -28px !important;
-    background-color: $darkColor;
-    z-index: 1;
+    margin-top: -38px !important;
+    margin-left: -19px;
+    width: fit-content;
+    border-radius: 10px;
+    // background-color: $secondColor;
+    // filter: drop-shadow(5px 5px 20px #000);
+}
+.skills-bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    background: rgb(29,71,96);
+    background: radial-gradient(circle, rgba(29,71,96,1) 0%, rgba(26,39,47,1) 100%);
+    z-index: 0;
+    width:100vw;
+    height:100vh;
+
+}
+.skills-list-title{
+    position:relative;
+    z-index: 5;
 }
 .skill-group-card{
     font-size: 200%;//CAMBIAR, ES SOLO TEMPORAL
@@ -115,6 +132,10 @@ a{
     // border: $lightColor 1px solid;
     // border-radius: 10px;
     filter: drop-shadow(10px 10px 10px #000);
+    transition: all 0.9s;
+}
+.active-shadow{
+    filter: drop-shadow(35px 15px 35px $secondColor);
 }
 .skill-detail-card{
     display: inline-block;
