@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Box  from '@mui/material/Box'
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
@@ -15,6 +15,7 @@ import Fhcontainer from '../hoc/Fhcontainer';
 
 const Contact = () => {
 
+  const [customHeight, setCustomHeight] = useState(0)
   const [copied, setCopied] = useState(false)
   //ACA AGREGAR UN EFECTO PARA EL COPYMAIL
   const copyMail = (indice,mail) => {
@@ -27,10 +28,19 @@ const Contact = () => {
       }, 1500);
     }
   }
+
+  useEffect(()=> {
+    const navHeight = document.querySelector('.nav-container').clientHeight;
+    console.log(navHeight)
+    setCustomHeight(navHeight);
+  }, [])
+
+
   
   return (
     <Fhcontainer clase={`contact-section`}>
-      <div className='top'></div>
+      <div className='custom-bkg' style={{height: `${customHeight}px`}}></div>
+      <div className='top' style={{marginTop: customHeight}}></div>
       <Stack direction={{md:'column', lg:'column'}} sx={centerMui} divider={<Divider orientation='vertical' flexItem/>} spacing={5}>        
         <Box>
           <h2>Get in touch!</h2>

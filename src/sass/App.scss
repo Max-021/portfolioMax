@@ -1,6 +1,3 @@
-@import '../components/navbar/navbar.scss';
-@import '../components/landpageComps/linkCard.scss';
-
 @font-face {
     font-family: "serifFont";
     src: url('../assets/fonts/Quattrocento-Regular.ttf')format('truetype');
@@ -34,13 +31,19 @@ $firstColor: #FFB100;
 $secondColor: #9C528B;
 $darkColor: #153243;
 $lightColor: #EEF0EB;
+
 $lightColorOpacity: #eef0ebe3;
+$darkColorShadeOpacity: hsla(200, 29%, 10%, 0.65);
 
 $secondColorShade: hsl(314, 55%, 40%);
 $darkColorShade: hsl(202, 30%, 10%);
 $lightColorShade:hsl(84, 24%, 70%);
 
 $margenSuperior: 64px;
+
+//REVISAR ESTO
+@import '../components/navbar/navbar.scss';
+@import '../components/landpageComps/linkCard.scss';
 
 //general
 a{
@@ -53,13 +56,56 @@ a{
 .general{
     @include mainFont();
 }
+//navigation bar
+.nav-container{
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    @include center-flex();
+    background-color: $darkColorShadeOpacity;
+    // box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+}
+.nav-list{
+    padding: 12px 0;
+    @include center-flex(row, center,center);
+    gap: 48px;
+}
+.nav-list-item{
+    // padding: 0 18px;
+    position: relative;
+    color:$lightColor;
+    @include titleFont();
+    transition: all 0.7s;
+    &:hover {
+        color: $firstColor;
+    }
+}
+.nav-list-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    margin: -3px 0;
+    background-color: $firstColor;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.7s ease-in-out 0s;
+    z-index: 100;
+  }
+  
+  .nav-list-item:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+  }
 //Layout
 .landpage-container {
     min-height: 100vh;
 }
 .main-container{
-    padding-top: 64px;
-    min-height: calc(100vh - 64px);
+    // min-height: 100vh;
 }
 //landpage
 .landpage-section {
@@ -154,12 +200,18 @@ a{
     @include center-flex();
     background-color: $lightColor;
 }
+.custom-bkg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: $darkColor;
+}
 .top{
     position: absolute;
     height: 0;
     width: 0;
     top: 0;
-    margin-top: $margenSuperior;
+    // margin-top: $margenSuperior;
     border-left: 50vw solid transparent;
     border-right: 50vw solid transparent;
     border-bottom: 150px solid transparent;
@@ -255,4 +307,19 @@ a{
     text-decoration: none;
     color: black;
     padding-bottom: 12px;
+}
+
+//MEDIA QUERY
+
+@media screen and (max-width: 768px) {
+    .about-section{
+        flex-direction: column;
+    }
+    .nav-container{
+        bottom: 0;
+    }
+    .custom-bkg{
+        top: auto;
+        bottom: 0 !important;
+    }
 }

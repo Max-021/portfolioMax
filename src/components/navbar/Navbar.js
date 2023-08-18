@@ -29,7 +29,7 @@ function DrawerAppBar(props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant="h6" sx={{ my: 2}}>
         MUI
       </Typography>
       <Divider />
@@ -60,7 +60,7 @@ function DrawerAppBar(props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 2, display: { sm: 'none' }, color: 'red' }}
           >
           </IconButton>
           <Typography
