@@ -7,6 +7,7 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
+import Typography from '@mui/material/Typography';
 //ver video de como hacer un formulario en react mui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 import {centerMui, contactListPosition, iconStyle} from '../styles/muiConfig';
 import {contactInfo} from '../data/navData';
@@ -19,7 +20,6 @@ const Contact = () => {
   const [copied, setCopied] = useState(false)
   //ACA AGREGAR UN EFECTO PARA EL COPYMAIL
   const copyMail = (indice,mail) => {
-    console.log('clicked')
     if(indice === 0) {
       navigator.clipboard.writeText(mail)
       setCopied(true)
@@ -31,7 +31,6 @@ const Contact = () => {
 
   useEffect(()=> {
     const navHeight = document.querySelector('.nav-container').clientHeight;
-    console.log(navHeight)
     setCustomHeight(navHeight);
   }, [])
 
@@ -42,9 +41,9 @@ const Contact = () => {
       <div className='custom-bkg' style={{height: `${customHeight}px`}}></div>
       <div className='top' style={{marginTop: customHeight}}></div>
       <Stack direction={{md:'column', lg:'column'}} sx={centerMui} divider={<Divider orientation='vertical' flexItem/>} spacing={5}>        
-        <Box>
-          <h2>Get in touch!</h2>
-          <p>agregar texto para tipo: ponte en contacto para lo que sea!</p>
+        <Box className='form-container'>
+          <Typography className='contact-title' variant='h3'>Get in touch!</Typography>
+          <Typography className='contact-text'>Any question you may want to ask me, be it a project, a job, or just saying hello, feel free to go ahead!</Typography>
           <ContactForm/>
         </Box>
       </Stack>
@@ -54,8 +53,8 @@ const Contact = () => {
             const {name,icon,link} = info;
             return index > 0 
                     ? 
-                      <a href={link} target='_blank' rel="noreferrer">
-                        <ListItemButton key={index}>
+                      <a key={index} href={link} target='_blank' rel="noreferrer">
+                        <ListItemButton>
                           <ListItemIcon sx={iconStyle}>
                             {icon}
                           </ListItemIcon>

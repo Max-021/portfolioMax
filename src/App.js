@@ -9,6 +9,7 @@ import Landpage from './pages/Landpage';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
+import Game from './pages/Game';
 
 
 // aca acomodar para que la landpage no tenga navbar y tenga una vista distinta
@@ -24,6 +25,7 @@ const App = () => {
           <Route path='/portfolio' element={<Portfolio/>}/>
           <Route path='/contact' element={<Contact/>}/>
         </Route>
+        <Route path='/game' element={<Game/>}/>
       </Routes>
 
       {/* <Layout>

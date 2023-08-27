@@ -218,6 +218,18 @@ a{
     border-top: 180px  solid $lightColorShade;
     opacity: 0.2;
 }
+.form-container{
+    width: 550px;
+}
+.contact-text{
+    @include mainFont();
+    font-weight: bold !important;
+}
+.contact-title{
+    @include titleFont();
+    color: $secondColorShade;
+    font-weight: bold !important;
+}
 
 .contactIcons {
     @include center-flex(column, center,center);
