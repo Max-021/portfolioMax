@@ -3,6 +3,22 @@ const secondColor = "#9C528B"
 const darkColor = "153243"
 const lightColor = "EEF0EB"
 
+//Acá estan las configuraciones para el framer que sean comunes
+export const container = {
+    hidden: {opacity:0},
+    show: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+export const formChildren = {
+    hidden: {opacity:0},
+    show: {opacity:1}
+  }  
+
 export const configBox = {
     width: 1,
     minHeight: 'inherit',

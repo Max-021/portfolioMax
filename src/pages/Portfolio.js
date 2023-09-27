@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import {motion} from 'framer-motion'
 //comps
-import {modalStyle} from '../styles/muiConfig';
+import {modalStyle, container} from '../styles/muiConfig';
 import Fhcontainer from '../hoc/Fhcontainer'
 import ProjectCard from '../components/portfolioComps/ProjectCard';
 import ExpandedProjectCard from '../components/portfolioComps/ExpandedProjectCard';
@@ -12,6 +13,8 @@ import Box from '@mui/material/Box';
 
 import {projects} from '../data/projectsData';
 
+
+const imgNameTest = 'nuevotest.png'
 // cambiar el banner simple que hice para que no se vea tan feo
 //puede ser una imágen o algo que rompa un poco la uniformidad de la seccion
 // pero que no haga demasiado ruido
@@ -34,14 +37,30 @@ const Portfolio = () => {
   return (
     <Fhcontainer clase={`portfolio-section`}>
       <div className='portfolio-upper-section'>
-        <h1 className='portfolio-title'>Portfolio</h1>
+        {/* <h1 className='portfolio-title'>My work</h1> */}
+        <img className='portfolio-main-img' src={require(`../assets/images/portfolio/${imgNameTest}`)} alt='main-img'/>
       </div>
       <div className='portfolio-second-section'>
-        <div className='projects-container'>
+        <motion.div variants={container} initial='hidden' animate='show' className='projects-container'>
           {projects.map((item, index) => {
-            return <ProjectCard key={index} {...item} clicked={() => openModal(index)}/>;
+            return <motion.div
+              className='project-card'
+              variants={{
+                hidden: {
+                  opacity: 0,
+                  scale: 0,
+                },
+                show: {
+                  opacity: 1,
+                  scale: 1,
+                  transition: {duration:0.7}
+                }
+              }}
+            >
+              <ProjectCard key={index} {...item} clicked={() => openModal(index)}/>
+            </motion.div>;
           })}
-        </div>
+        </motion.div>
       </div>
       <Modal
         open={open} 

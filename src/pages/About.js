@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Box  from '@mui/material/Box'
 import Typography from '@mui/material/Typography';
+import {motion} from 'framer-motion'
+import { TypeAnimation } from 'react-type-animation';
 import { skillGroup } from '../data/skillsData';
 import { text } from '../data/aboutData/textEn';
 import Fhcontainer from '../hoc/Fhcontainer';
@@ -53,21 +55,41 @@ const About = () => {
       <Box className='about-position'>
         <Box className='about-info'>
           <Typography className='titles' variant='h2' gutterBottom>About me</Typography>
-          {text.map((texto, index) => {
-            return <Typography className='general' gutterBottom key={index}>
-              {texto}
-            </Typography>
-          })}
+            <TypeAnimation
+            sequence={[text]}
+            speed={90}
+            wrapper='p'
+            className='general'
+            style={{whiteSpace: 'pre-line'}}
+            />
+          {/* {text.map((texto, index) => {
+            return 
+            
+            
+            
+            <Typography className='general' gutterBottom key={index}>
+                <TypeAnimation
+                  sequence={[texto]}
+                  speed={50}
+                />;
+              // </Typography>
+          })} */}
         </Box>
-        <Box className='about-skills'>
-          <div className='about-skills-title'>
-            <Typography className='titles' variant='h5'>Skills</Typography>
-          </div>
-          {skillGroup.map((item,index) => {
-            const {groupName,skills} = item;
-            return <SkillCard key={index} skillGroupName={groupName} active={isActive[index].isActive} skills={skills} activeGroupCallback={skillGroupChange}/>
-          })}
-        </Box>
+        <motion.div
+          initial={{opacity:0}}
+          animate={{opacity:1}}
+          transition={{duration:0.8, ease: 'easeInOut'}}
+        >
+          <Box className='about-skills'>
+            <div className='about-skills-title'>
+              <Typography className='titles' variant='h5'>My skills</Typography>
+            </div>
+            {skillGroup.map((item,index) => {
+              const {groupName,skills} = item;
+              return <SkillCard key={index} skillGroupName={groupName} active={isActive[index].isActive} skills={skills} activeGroupCallback={skillGroupChange}/>
+            })}
+          </Box>
+        </motion.div>
       </Box>
     </Fhcontainer>
   )

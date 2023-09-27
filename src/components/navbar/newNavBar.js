@@ -10,15 +10,21 @@ const NavBar = () => {
 
 
   return (
-    <div className='nav-container'>
-        <nav className='nav-list'>
-            {links.map((link,index) => (
+    <motion.div
+      initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{duration:1, ease: 'easeIn'}}
+    >
+      <div className='nav-container'>
+          <nav className='nav-list'>
+              {links.map((link,index) => (
                 <Link key={index} to={link.url} className='nav-list-item'>
-                  {link.name}
-                </Link>
-            ))}
-        </nav>
-    </div>
+                    {link.name}
+                  </Link>
+              ))}
+          </nav>
+      </div>
+    </motion.div>
   )
 }
 

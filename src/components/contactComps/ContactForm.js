@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import Box  from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button';
-import { formBox } from '../../styles/muiConfig'
+import {motion} from 'framer-motion'
+import { formBox,container, formChildren } from '../../styles/muiConfig'
 import emailjs from '@emailjs/browser'
+import { duration } from '@mui/material';
 
 // VALIDAR LOS DATOS DEL FORMULARIO ANTES DE ENVIARLO
 
@@ -41,10 +43,25 @@ const ContactForm = () => {
   }
   return (
     <Box component='form' onSubmit={submitData}  sx={formBox}>
-      <TextField required label="Name"    value={msgInfo.name}    onChange={handleChange} name='name' id="name-input" margin='dense' />
-      <TextField required label="Email"   value={msgInfo.mail}    onChange={handleChange} name='mail' id="email-input" margin='dense' type="email"/>
-      <TextField required label="Message" value={msgInfo.message} onChange={handleChange} name='message' id="msg-input" margin='dense' multiline minRows={4} maxRows={8}/>
-      <Button type='submit'>Send</Button>
+      <motion.div
+      style={{display: 'flex', flexDirection: 'column', padding:0}}
+        variants={container}
+        initial='hidden'
+        animate='show'
+      >
+        <motion.div variants={formChildren}>
+          <TextField required label="Name"    style={{width:'100%'}} value={msgInfo.name}    onChange={handleChange} name='name' id="name-input" margin='dense' />
+        </motion.div>
+        <motion.div variants={formChildren}>
+          <TextField required label="Email"   style={{width:'100%'}} value={msgInfo.mail}    onChange={handleChange} name='mail' id="email-input" margin='dense' type="email"/>
+        </motion.div>
+        <motion.div variants={formChildren}>
+          <TextField required label="Message" style={{width:'100%'}} value={msgInfo.message} onChange={handleChange} name='message' id="msg-input" margin='dense' multiline minRows={4} maxRows={8}/>
+        </motion.div>
+        <motion.div variants={formChildren}>
+          <Button type='submit'>Send</Button>
+        </motion.div>
+      </motion.div>
     </Box>
   )
 }

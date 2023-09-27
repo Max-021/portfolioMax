@@ -8,7 +8,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import Alert from '@mui/material/Alert';
 import Collapse from '@mui/material/Collapse';
 import Typography from '@mui/material/Typography';
-//ver video de como hacer un formulario en react mui!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+import {motion} from 'framer-motion'
+import { TypeAnimation } from 'react-type-animation';
 import {centerMui, contactListPosition, iconStyle} from '../styles/muiConfig';
 import {contactInfo} from '../data/navData';
 import ContactForm from '../components/contactComps/ContactForm';
@@ -38,34 +39,49 @@ const Contact = () => {
   
   return (
     <Fhcontainer clase={`contact-section`}>
-      <div className='custom-bkg' style={{height: `${customHeight}px`}}></div>
+      <motion.div
+        className='custom-bkg' 
+        style={{height: `${customHeight}px`}}
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{duration:1, ease: 'easeIn'}}
+      ></motion.div>
       <div className='top' style={{marginTop: customHeight}}></div>
       <Stack direction={{md:'column', lg:'column'}} sx={centerMui} divider={<Divider orientation='vertical' flexItem/>} spacing={5}>        
         <Box className='form-container'>
           <Typography className='contact-title' variant='h3'>Get in touch!</Typography>
-          <Typography className='contact-text'>Any question you may want to ask me, be it a project, a job, or just saying hello, feel free to go ahead!</Typography>
+          <TypeAnimation
+            sequence={["Any question you may want to ask me, be it a project, a job, or just saying hello, feel free to go ahead!"]}
+            speed={90}
+            wrapper='p'
+            className='contact-text'
+          />
           <ContactForm/>
         </Box>
       </Stack>
       <Box>
-        <List className='contactIcons' sx={contactListPosition}>
-          {contactInfo.map((info,index) => {
-            const {name,icon,link} = info;
-            return index > 0 
-                    ? 
-                      <a key={index} href={link} target='_blank' rel="noreferrer">
-                        <ListItemButton>
-                          <ListItemIcon sx={iconStyle}>
-                            {icon}
-                          </ListItemIcon>
-                        </ListItemButton>
-                      </a>
-                    : 
+        <motion.div
+          transition={{duration:2}}
+        >
+          <List className='contactIcons' sx={contactListPosition}>
+            {contactInfo.map((info,index) => {
+              const {name,icon,link} = info;
+              return index > 0 
+              ? 
+                        <a key={index} href={link} target='_blank' rel="noreferrer">
+                          <ListItemButton>
+                            <ListItemIcon sx={iconStyle}>
+                              {icon}
+                            </ListItemIcon>
+                          </ListItemButton>
+                        </a>
+                      : 
                       <ListItemButton key={index} onClick={() => copyMail(index,name)}>
-                        <ListItemIcon sx={iconStyle}>{icon}</ListItemIcon>
-                      </ListItemButton>
-          })}
-        </List>
+                          <ListItemIcon sx={iconStyle}>{icon}</ListItemIcon>
+                        </ListItemButton>
+            })}
+          </List>
+        </motion.div>
       </Box>
       <Collapse className='copiedAlert' in={copied}>
         <Alert variant='filled' severity='success' >Copied to clipboard!</Alert>

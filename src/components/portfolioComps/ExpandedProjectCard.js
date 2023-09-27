@@ -8,6 +8,8 @@ import Link from '@mui/material/Link';
 import {BsBoxArrowUpRight} from 'react-icons/bs'
 
 import testImg from '../../assets/images/portfolio/testImg.jpg'
+import expandedIngerayProject from '../../assets/images/portfolio/expanded-ingeray-project.png'
+import expandedMaximilianoProject from '../../assets/images/portfolio/expanded-maximiliano-project.png'
 // revisar el componente card de react mui
 
 const cardSx = {
@@ -28,7 +30,7 @@ const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
       <CardMedia 
         component={'img'}
         sx={cardSx}
-        image={testImg} 
+        image={cardImg} 
       />
       <CardContent className='expanded-card-content'>
         <Typography variant='h5' gutterBottom>

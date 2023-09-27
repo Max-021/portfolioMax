@@ -42,7 +42,6 @@ $lightColorShade:hsl(84, 24%, 70%);
 $margenSuperior: 64px;
 
 //REVISAR ESTO
-@import '../components/navbar/navbar.scss';
 @import '../components/landpageComps/linkCard.scss';
 
 //general
@@ -55,6 +54,8 @@ a{
 }
 .general{
     @include mainFont();
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
 }
 //navigation bar
 .nav-container{
@@ -67,7 +68,7 @@ a{
     backdrop-filter: blur( 3px );
 }
 .nav-list{
-    padding: 12px 0;
+    padding: 18px 0;
     @include center-flex(row, center,center);
     gap: 48px;
 }
@@ -224,6 +225,8 @@ a{
 .contact-text{
     @include mainFont();
     font-weight: bold !important;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
 }
 .contact-title{
     @include titleFont();
@@ -244,9 +247,13 @@ a{
     background-color: $darkColor;
 }
 .portfolio-upper-section{
-    height: 150px;
+    // height: 250px;
     background-color: black;
     @include center-flex();
+}
+.portfolio-main-img{
+    width: 100%;
+    height: auto;
 }
 .portfolio-title{
     color: white;
@@ -282,24 +289,24 @@ a{
     margin-top: 12px
 }
 
-.portfolio-project {
-    background-image: url('../assets/images/portfolio/portfolioproject.png');
+.portada-portfolio {
+    background-image: url('../assets/images/portfolio/portadaportfolio.png');
 }
-.ingeray-project {
+.portada-ingeray {
     background-image: url('../assets/images/portfolio/portadaingeray.png');
 }
-
-.portfolio-project,
-.ingeray-project{
+.portada-maximiliano{
+    background-image: url('../assets/images/portfolio/portadamaximiliano.png');
+}
+.project-img{
     position: relative;
     @include allSpace;
     background-size: cover;
     transition: 0.7s all;
-    transform: scale(1.4);
+    transform: scale(1.1);
     @include center-flex(column, flex-end, flex-start);
 }
-.portfolio-project:hover,
-.ingeray-project:hover {
+.project-img:hover {
     transform: scale(1);
     .project-description {
         opacity: 1;
