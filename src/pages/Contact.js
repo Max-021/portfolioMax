@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react'
 import Box  from '@mui/material/Box'
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
+import Slide from '@mui/material/Slide';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -59,16 +60,18 @@ const Contact = () => {
           <ContactForm/>
         </Box>
       </Stack>
-      <Box>
-        <motion.div
-          transition={{duration:2}}
-        >
-          <List className='contactIcons' sx={contactListPosition}>
+      <Box sx={contactListPosition}>
+        <Slide  direction='left' mountOnEnter unmountOnExit in={() => {
+          setTimeout(() => {
+            return true
+          }, 2500);
+        }}>
+          <List className='contactIcons'>
             {contactInfo.map((info,index) => {
               const {name,icon,link} = info;
               return index > 0 
               ? 
-                        <a key={index} href={link} target='_blank' rel="noreferrer">
+              <a key={index} href={link} target='_blank' rel="noreferrer">
                           <ListItemButton>
                             <ListItemIcon sx={iconStyle}>
                               {icon}
@@ -81,7 +84,7 @@ const Contact = () => {
                         </ListItemButton>
             })}
           </List>
-        </motion.div>
+        </Slide>
       </Box>
       <Collapse className='copiedAlert' in={copied}>
         <Alert variant='filled' severity='success' >Copied to clipboard!</Alert>

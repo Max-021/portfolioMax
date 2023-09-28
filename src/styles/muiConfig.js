@@ -34,11 +34,12 @@ export const formBox = {
 }
 
 export const contactListPosition = {
-    height: '102px',
+    height: '150px',
     position: 'absolute',
     right: '0',
-    top: 'calc((100vh - 102px) /2 )',
+    top: 'calc((100vh - 150px) /2 )',
     padding: '0',
+    overflow: 'hidden'
 }
 
 export const modalStyle = {
