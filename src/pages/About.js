@@ -60,6 +60,7 @@ const About = () => {
             speed={90}
             wrapper='p'
             className='general'
+            cursor={false}
             style={{whiteSpace: 'pre-line'}}
             />
           {/* {text.map((texto, index) => {

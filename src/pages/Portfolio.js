@@ -14,7 +14,7 @@ import Box from '@mui/material/Box';
 import {projects} from '../data/projectsData';
 
 
-const imgNameTest = 'nuevotest.png'
+const banner = 'banner.png'
 // cambiar el banner simple que hice para que no se vea tan feo
 //puede ser una imágen o algo que rompa un poco la uniformidad de la seccion
 // pero que no haga demasiado ruido
@@ -36,10 +36,14 @@ const Portfolio = () => {
 
   return (
     <Fhcontainer clase={`portfolio-section`}>
-      <div className='portfolio-upper-section'>
-        {/* <h1 className='portfolio-title'>My work</h1> */}
-        <img className='portfolio-main-img' src={require(`../assets/images/portfolio/${imgNameTest}`)} alt='main-img'/>
-      </div>
+      <motion.div 
+        className='portfolio-upper-section'
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        transition={{duration:1.5, ease: 'easeIn'}}
+      >
+        <img className='portfolio-main-img' src={require(`../assets/images/portfolio/${banner}`)} alt='main-img'/>
+      </motion.div>
       <div className='portfolio-second-section'>
         <motion.div variants={container} initial='hidden' animate='show' className='projects-container'>
           {projects.map((item, index) => {

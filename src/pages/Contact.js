@@ -47,14 +47,21 @@ const Contact = () => {
         animate={{opacity:1}}
         transition={{duration:1, ease: 'easeIn'}}
       ></motion.div>
-      <div className='top' style={{marginTop: customHeight}}></div>
+      <Slide  direction='down' mountOnEnter unmountOnExit in={() => {
+        setTimeout(() => {
+          return true
+        }, 200);
+      }}>
+        <div className='top' style={{marginTop: customHeight}}></div>
+      </Slide>
       <Stack direction={{md:'column', lg:'column'}} sx={centerMui} divider={<Divider orientation='vertical' flexItem/>} spacing={5}>        
         <Box className='form-container'>
           <Typography className='contact-title' variant='h3'>Get in touch!</Typography>
           <TypeAnimation
             sequence={["Any question you may want to ask me, be it a project, a job, or just saying hello, feel free to go ahead!"]}
-            speed={90}
+            speed={96}
             wrapper='p'
+            cursor={false}
             className='contact-text'
           />
           <ContactForm/>
