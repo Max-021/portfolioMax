@@ -106,7 +106,8 @@ a{
     min-height: 100vh;
 }
 .main-container{
-    // min-height: 100vh;
+    height: fit-content;
+    position: relative;
 }
 //landpage
 .landpage-section {
@@ -127,7 +128,6 @@ a{
 .about-section {
     background: rgb(29,71,96);
     background: radial-gradient(circle, rgba(29,71,96,1) 0%, rgba(26,39,47,1) 90%); 
-    // background-color: $darkColor;
     color: $lightColor;
     @include center-flex();
 }
@@ -138,6 +138,7 @@ a{
 }
 .about-info {
     width: 450px;
+    min-height: 380px;
 }
 .about-skills{
     width: 300px;
@@ -155,8 +156,6 @@ a{
     margin-left: -19px;
     width: fit-content;
     border-radius: 10px;
-    // background-color: $secondColor;
-    // filter: drop-shadow(5px 5px 20px #000);
 }
 .skills-bg{
     position: absolute;
@@ -221,12 +220,14 @@ a{
 }
 .form-container{
     width: 550px;
+    z-index: 1;
 }
 .contact-text{
     @include mainFont();
     font-weight: bold !important;
     line-height: 1.5;
     letter-spacing: 0.00938em;
+    min-height: 50px;
 }
 .contact-title{
     @include titleFont();
@@ -340,10 +341,38 @@ a{
 //MEDIA QUERY
 
 @media screen and (max-width: 768px) {
+    //about section
     .about-section{
         flex-direction: column;
     }
+    .about-position {
+        flex-direction: column;
+        padding-top: 43px;
+        padding-bottom: 86px;
+        gap: 48px;
+    }
+    .about-skills-position{
+        align-self: center;
+    }
+    //contact section
+    .contact-section{
+        padding-top: 0;
+    }
+    .top {
+        display: none;
+    }
+    .contact-content{
+        align-self: flex-start;
+        padding-top: 48px;
+    }
+    //portfolio section
+    .project-card {
+        width: 50%;
+    }
+
+    //elementos generales
     .nav-container{
+        position: fixed;
         bottom: 0;
     }
     .custom-bkg{

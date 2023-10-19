@@ -9,8 +9,8 @@ const Layout = (props) => {
   return (
     <Auxiliary>
       {/* <Navbar/> */}
-      <NavBar/>
       <Box component="main" className='main-container'>
+        <NavBar/>
         {/* {props.children} */}
         <Outlet/>
       </Box>

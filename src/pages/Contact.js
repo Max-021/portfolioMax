@@ -54,7 +54,7 @@ const Contact = () => {
       }}>
         <div className='top' style={{marginTop: customHeight}}></div>
       </Slide>
-      <Stack direction={{md:'column', lg:'column'}} sx={centerMui} divider={<Divider orientation='vertical' flexItem/>} spacing={5}>        
+      <Stack className='contact-content' direction={{md:'column', lg:'column'}} sx={centerMui} divider={<Divider orientation='vertical' flexItem/>} spacing={5}>        
         <Box className='form-container'>
           <Typography className='contact-title' variant='h3'>Get in touch!</Typography>
           <TypeAnimation

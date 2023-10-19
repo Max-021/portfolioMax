@@ -63,23 +63,12 @@ const About = () => {
             cursor={false}
             style={{whiteSpace: 'pre-line'}}
             />
-          {/* {text.map((texto, index) => {
-            return 
-            
-            
-            
-            <Typography className='general' gutterBottom key={index}>
-                <TypeAnimation
-                  sequence={[texto]}
-                  speed={50}
-                />;
-              // </Typography>
-          })} */}
         </Box>
         <motion.div
           initial={{opacity:0}}
           animate={{opacity:1}}
           transition={{duration:0.8, ease: 'easeInOut'}}
+          className='about-skills-position'
         >
           <Box className='about-skills'>
             <div className='about-skills-title'>

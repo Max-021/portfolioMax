@@ -14,8 +14,8 @@ const NavBar = () => {
       initial={{opacity:0}}
       animate={{opacity:1}}
       transition={{duration:1, ease: 'easeIn'}}
+      className='nav-container'
     >
-      <div className='nav-container'>
           <nav className='nav-list'>
               {links.map((link,index) => (
                 <Link key={index} to={link.url} className='nav-list-item'>
@@ -23,7 +23,6 @@ const NavBar = () => {
                   </Link>
               ))}
           </nav>
-      </div>
     </motion.div>
   )
 }
