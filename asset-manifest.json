@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b09d214f.css",
+    "main.js": "/static/js/main.c3a35ea4.js",
+    "static/js/787.f6e65957.chunk.js": "/static/js/787.f6e65957.chunk.js",
+    "static/media/expanded-ingeray-project.png": "/static/media/expanded-ingeray-project.f0c54df049fa77d3181f.png",
+    "static/media/expanded-maximiliano-project.png": "/static/media/expanded-maximiliano-project.3aa4a19c6a8891680265.png",
+    "static/media/banner.png": "/static/media/banner.6803b18e7196ecc49d4e.png",
+    "static/media/portadaingeray.png": "/static/media/portadaingeray.9abcd1738bb90544505b.png",
+    "static/media/expanded-portfolio-project.png": "/static/media/expanded-portfolio-project.7dda2d72942187b70095.png",
+    "static/media/Quattrocento-Regular.ttf": "/static/media/Quattrocento-Regular.3d1b0443d0ee295dc542.ttf",
+    "static/media/QuattrocentoSans-Regular.ttf": "/static/media/QuattrocentoSans-Regular.c2e444fd4e26b791b257.ttf",
+    "static/media/testImg.jpg": "/static/media/testImg.f4564129a970db2dbc0d.jpg",
+    "static/media/portadaportfolio.png": "/static/media/portadaportfolio.69a309e6420468e2b0bc.png",
+    "static/media/mysql.svg": "/static/media/mysql.1957fab3610b78c02010dab864c2d6b8.svg",
+    "static/media/sass.svg": "/static/media/sass.f817528d7d0d5c2b9a8693d95a394d60.svg",
+    "static/media/react.svg": "/static/media/react.287ed079d67ebccd2b751239d6ad0a4f.svg",
+    "static/media/laravel.svg": "/static/media/laravel.296025f6e367b1b191cddff56ad145a6.svg",
+    "static/media/node-js.svg": "/static/media/node-js.6e8c4b34fcf9cc95beeb523cf5b029d3.svg",
+    "static/media/php.svg": "/static/media/php.650c3a6c59dbe6f37c4a5cbf5ca6a72a.svg",
+    "static/media/js.svg": "/static/media/js.5d02826ad7a99884910d74ff958f38e9.svg",
+    "index.html": "/index.html",
+    "static/media/mongodb.svg": "/static/media/mongodb.d930c2c4198d1000c2fb8b7d3177a44c.svg",
+    "static/media/css3.svg": "/static/media/css3.1072a59dad7bcd4e8c82de4fca0cb597.svg",
+    "static/media/html5.svg": "/static/media/html5.df324691481d1b1c9b1fbe01f8563975.svg",
+    "static/media/vuejs.svg": "/static/media/vuejs.82f84f7f65e00086813384564771329c.svg",
+    "main.b09d214f.css.map": "/static/css/main.b09d214f.css.map",
+    "main.c3a35ea4.js.map": "/static/js/main.c3a35ea4.js.map",
+    "787.f6e65957.chunk.js.map": "/static/js/787.f6e65957.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b09d214f.css",
+    "static/js/main.c3a35ea4.js"
+  ]
+}
