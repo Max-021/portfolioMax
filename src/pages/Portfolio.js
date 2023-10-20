@@ -13,12 +13,6 @@ import Box from '@mui/material/Box';
 
 import {projects} from '../data/projectsData';
 
-
-const banner = 'banner.png'
-// cambiar el banner simple que hice para que no se vea tan feo
-//puede ser una imágen o algo que rompa un poco la uniformidad de la seccion
-// pero que no haga demasiado ruido
-
 const Portfolio = () => {
   const [open, setOpen] = useState(false)
   const [expandedInfo, setExpandedInfo] = useState({});
@@ -42,7 +36,7 @@ const Portfolio = () => {
         animate={{opacity:1}}
         transition={{duration:1.5, ease: 'easeIn'}}
       >
-        <img className='portfolio-main-img' src={require(`../assets/images/portfolio/${banner}`)} alt='main-img'/>
+        <img className='portfolio-main-img' src={require(`../assets/images/portfolio/banner.png`)} alt='main-img'/>
       </motion.div>
       <div className='portfolio-second-section'>
         <motion.div variants={container} initial='hidden' animate='show' className='projects-container'>

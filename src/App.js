@@ -19,6 +19,7 @@ const App = () => {
   return (
     <Auxiliary>
       <Routes>
+        {/* <Route path='/' element={<Landpage/>}/> */}
         <Route path='/portfolioMax' element={<Landpage/>}/>
         <Route element={<Layout/>}>
           <Route path='/about' element={<About/>}/>
