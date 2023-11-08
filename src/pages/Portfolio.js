@@ -42,6 +42,7 @@ const Portfolio = () => {
         <motion.div variants={container} initial='hidden' animate='show' className='projects-container'>
           {projects.map((item, index) => {
             return <motion.div
+              key={index}
               className='project-card'
               variants={{
                 hidden: {

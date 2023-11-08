@@ -10,8 +10,8 @@ const links = [
         name: "About"
     },
     {
-        url: "/portfolio",
-        name: "Portfolio"
+        url: "/work",
+        name: "Work"
     },
     {
         url: "/contact",

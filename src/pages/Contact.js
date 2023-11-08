@@ -47,11 +47,7 @@ const Contact = () => {
         animate={{opacity:1}}
         transition={{duration:1, ease: 'easeIn'}}
       ></motion.div>
-      <Slide  direction='down' mountOnEnter unmountOnExit in={() => {
-        setTimeout(() => {
-          return true
-        }, 200);
-      }}>
+      <Slide  direction='down' mountOnEnter unmountOnExit in={true} timeout={1000}>
         <div className='top' style={{marginTop: customHeight}}></div>
       </Slide>
       <Stack className='contact-content' direction={{md:'column', lg:'column'}} sx={centerMui} divider={<Divider orientation='vertical' flexItem/>} spacing={5}>        
@@ -68,11 +64,7 @@ const Contact = () => {
         </Box>
       </Stack>
       <Box sx={contactListPosition}>
-        <Slide  direction='left' mountOnEnter unmountOnExit in={() => {
-          setTimeout(() => {
-            return true
-          }, 2500);
-        }}>
+        <Slide  direction='left' mountOnEnter unmountOnExit in={true} timeout={1000}>
           <List className='contactIcons'>
             {contactInfo.map((info,index) => {
               const {name,icon,link} = info;
