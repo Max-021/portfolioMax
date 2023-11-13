@@ -389,9 +389,13 @@ h1{
         padding-top: 43px;
         padding-bottom: 86px;
         gap: 48px;
+        width: 80%;
     }
     .about-skills-position{
         align-self: center;
+    }
+    .about-info{
+        width: 100%;
     }
     /*
     
@@ -414,6 +418,10 @@ h1{
     }
     .contactIcons{
         flex-direction: row;
+        padding-top: 36px !important;
+    }
+    .copiedAlert{
+        top: 1%;
     }
     //portfolio section
     .project-card {
