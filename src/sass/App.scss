@@ -379,7 +379,7 @@ h1{
 
 //MEDIA QUERY
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     //about section
     .about-section{
         flex-direction: column;
@@ -393,9 +393,14 @@ h1{
     .about-skills-position{
         align-self: center;
     }
-    //contact section
+    /*
+    
+    contact section
+
+    */
     .contact-section{
         padding-top: 0;
+        flex-direction: column;
     }
     .top {
         display: none;
@@ -403,6 +408,12 @@ h1{
     .contact-content{
         align-self: flex-start;
         padding-top: 48px;
+    }
+    .form-container{
+        width: 80%;
+    }
+    .contactIcons{
+        flex-direction: row;
     }
     //portfolio section
     .project-card {

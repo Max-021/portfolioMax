@@ -11,12 +11,12 @@ const routes = [
     url: '/about'
   },
   {
-    name: 'Contact',
-    url: '/contact'
-  },
-  {
     name: 'Work',
     url: '/work'
+  },
+  {
+    name: 'Contact',
+    url: '/contact'
   },
 ]
 

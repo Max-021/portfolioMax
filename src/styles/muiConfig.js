@@ -35,7 +35,9 @@ export const formBox = {
 
 export const contactListPosition = {
     height: '150px',
-    position: 'absolute',
+    position: {
+      md: 'absolute',
+    },
     right: '0',
     top: 'calc((100vh - 150px) /2 )',
     padding: '0',
