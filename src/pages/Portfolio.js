@@ -62,7 +62,7 @@ const Portfolio = () => {
         </motion.div>
       </div>
       <Modal
-        open={open} 
+        open={open}
         onClose={closeModal}
         closeAfterTransition
         slots={{backdrop: Backdrop}}
@@ -73,7 +73,7 @@ const Portfolio = () => {
         }}
         sx={{border: 'none', boxShadow: 'none'}}
       >
-        <Fade in={open} style={{border: 'none', boxShadow:'none'}}>
+        <Fade in={open} style={{border: 'none', boxShadow:'none'}} className="project-modal">
           <Box sx={modalStyle}>
             <ExpandedProjectCard {...expandedInfo}/>
           </Box>

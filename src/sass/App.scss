@@ -363,6 +363,9 @@ h1{
         color: $lightColor;
     }
 }
+.project-modal:focus-visible {
+    outline: none;
+}
 .expanded-card-content{
     background-color: $darkColorShade;
     color: $lightColor;

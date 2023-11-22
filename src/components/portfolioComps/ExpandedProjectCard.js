@@ -26,7 +26,7 @@ const cardConfig = {
 
 const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
   return (
-    <Card sx={cardConfig}>
+    <Card sx={cardConfig} className="project-modal">
       <CardMedia 
         component={'img'}
         sx={cardSx}
