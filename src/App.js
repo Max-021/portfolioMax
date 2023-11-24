@@ -9,15 +9,13 @@ import Landpage from './pages/Landpage';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Portfolio from './pages/Portfolio';
-import LandpageV2 from './pages/LandpageV2';
 
 const App = () => {
   
   return (
     <Auxiliary>
       <Routes>
-        {/* <Route path='/' element={<Landpage/>}/> */}
-        <Route path='/' element={<LandpageV2/>}/>
+        <Route path='/' element={<Landpage/>}/>
         <Route element={<Layout/>}>
           <Route path='/about' element={<About/>}/>
           <Route path='/work' element={<Portfolio/>}/>

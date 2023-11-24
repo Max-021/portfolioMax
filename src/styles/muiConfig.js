@@ -1,7 +1,7 @@
-const firstColor = "#FFB100"
-const secondColor = "#9C528B"
-const darkColor = "153243"
-const lightColor = "EEF0EB"
+export const firstColor = "#FFB100"
+export const secondColor = "#9C528B"
+export const darkColor = "#153243"
+export const lightColor = "#EEF0EB"
 
 //Acá estan las configuraciones para el framer que sean comunes
 export const container = {
