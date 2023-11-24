@@ -67,10 +67,10 @@ const LandpageV2 = () => {
           <div>
             <p className='subtitle'>Software developer</p>
             <motion.div 
-              initial={{translateX: -195}}
+              initial={{translateX: -270}}
               animate={{translateX: 0}}
               // transition={{duration:3, ease: 'easeIn',delay:3.8}}
-              transition={{duration:3, ease: 'easeIn',delay:3.3}}
+              transition={{duration:2.8, ease: 'easeOut',delay:3.5,type: "tween"}}
               className='subtitle-bkg'>
             </motion.div>
           </div>
