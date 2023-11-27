@@ -6,9 +6,10 @@ import {configBox} from '../styles/muiConfig';
 
 const Fhcontainer = (props) => {
   const [customHeight, setCustomHeight] = useState(0); 
+  const responsiveSize = 900;
 
   const adjustResponsivePadding = () => {
-    if(window.innerWidth < 768) {
+    if(window.innerWidth < responsiveSize) {
       setCustomHeight(0)
     } else{
       const navHeight = document.querySelector('.nav-container').clientHeight;
@@ -19,7 +20,7 @@ const Fhcontainer = (props) => {
     useEffect(()=> {
     const initialNavHeight = document.querySelector('.nav-container').clientHeight;
     window.addEventListener('resize', adjustResponsivePadding);
-      if(window.innerWidth < 768) {
+      if(window.innerWidth < responsiveSize) {
         setCustomHeight(0)
       } else {
         setCustomHeight(initialNavHeight);        

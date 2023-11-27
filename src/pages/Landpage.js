@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion'
 import Tilt from 'react-parallax-tilt';
@@ -36,8 +36,30 @@ const draw = {
   }
 };
 
+const rectW = 2000
+const responsiveH = 1600;
 
 const LandpageV2 = () => {
+  const [rectH, setRectH] = useState(1000)
+  const responsiveSize = 900;
+
+  const adjustResponsiveRect = () => {
+    if(window.innerWidth < responsiveSize) {
+      setRectH(responsiveH)
+    } else{
+      setRectH(1000)
+    }
+  }
+
+    useEffect(()=> {
+    window.addEventListener('resize', adjustResponsiveRect);
+      if(window.innerWidth < responsiveSize) {
+        setRectH(responsiveH)
+      } else {
+        setRectH(1000)
+      }
+  }, [])
+
   return (
     <div className='landpage-section-test'>
       <div className='landpage-screen'>
@@ -51,8 +73,8 @@ const LandpageV2 = () => {
           >
             <motion.rect
               className="landpage-rect"
-              width="2000"
-              height="1000"
+              width={rectW}
+              height={rectH}
               x="10"
               y="0"
               rx="20"
@@ -67,7 +89,7 @@ const LandpageV2 = () => {
           <div>
             <p className='subtitle'>Software developer</p>
             <motion.div 
-              initial={{translateX: -270}}
+              initial={{translateX: -470}}
               animate={{translateX: 0}}
               // transition={{duration:3, ease: 'easeIn',delay:3.8}}
               transition={{duration:2.8, ease: 'easeOut',delay:3.5,type: "tween"}}

@@ -143,7 +143,6 @@ a{
     width: 72%;
     aspect-ratio: 16/8;
     overflow: hidden;
-
 }
 .landpage-icon{
     width: 100%;
@@ -410,6 +409,15 @@ h1{
 //MEDIA QUERY
 
 @media screen and (max-width: 900px) {
+
+    //landpage section
+
+    .landpage-screen{
+        width: 90%;
+        overflow: visible;
+    }
+
+
     //about section
     .about-section{
         flex-direction: column;
