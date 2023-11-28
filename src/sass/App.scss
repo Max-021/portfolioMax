@@ -131,10 +131,7 @@ a{
     position: absolute;
     top: 8%;
     left: 4%;
-    // margin-left: 12px;
     @include titleFont();
-    // border: 1px solid black;
-    // width:100%;
 }
 .landpage-screen{
     position: absolute;
@@ -419,7 +416,13 @@ h1{
         width: 90%;
         overflow: visible;
     }
-
+    h1{
+        font-size: 60px;
+    }
+    .landpage-nav{
+        right: 5%;
+        bottom: 2%;
+    }
 
     //about section
     .about-section{

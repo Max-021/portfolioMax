@@ -37,7 +37,7 @@ const draw = {
 };
 
 const rectW = 2000
-const responsiveH = 1600;
+const responsiveH = 2500;
 
 const LandpageV2 = () => {
   const [rectH, setRectH] = useState(1000)
