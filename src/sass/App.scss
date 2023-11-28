@@ -187,7 +187,10 @@ h1{
     gap: 24px;
     font-size: 350%;
 }
-.landpage-nav > * :hover{
+.landpage-nav > *{
+    border-radius: 10%;
+    backdrop-filter: blur( 7px );
+    padding: 10px;
 }
 //about section
 .about-section {
