@@ -408,6 +408,14 @@ h1{
 
 //MEDIA QUERY
 
+
+//media query especial para ajustar las tarjetas expandidas
+@media screen and (max-width: 625px) {
+    .expanded-project-card{
+        max-width: 85vw;
+    }
+}
+
 @media screen and (max-width: 900px) {
 
     //landpage section

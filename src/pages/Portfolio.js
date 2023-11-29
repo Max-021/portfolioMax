@@ -73,7 +73,7 @@ const Portfolio = () => {
         }}
         sx={{border: 'none', boxShadow: 'none'}}
       >
-        <Fade in={open} style={{border: 'none', boxShadow:'none'}} className="project-modal">
+        <Fade in={open} style={{border: 'none', boxShadow:'none'}} className="project-modal expanded-project-card">
           <Box sx={modalStyle}>
             <ExpandedProjectCard {...expandedInfo}/>
           </Box>
