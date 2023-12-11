@@ -28,10 +28,10 @@ export const projects = [
         skillInfo:"React, Javascript, Html, Css, Json"
     },
     {
-        url:"portfolio url",
-        name:"Personal Portfolio",
-        descr:"This is my personal portfolio! I designed it with the purpose of showing part of my skills at web development, I made it using react, and more technologies",
-        urlImg: 'portada-portfolio',
+        url:"#",
+        name:"Also...",
+        descr:"I've worked on other different projects ",
+        urlImg: 'portada-also',
         cardImg:expandedPortfolioProject,
         skillInfo:"React, Javascript, Html, Css, Json"
     },

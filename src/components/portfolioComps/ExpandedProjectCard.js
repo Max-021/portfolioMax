@@ -25,6 +25,11 @@ const cardConfig = {
 }
 
 const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
+
+  let titleLink;
+  if(url != "#") {
+    
+  }
   return (
     <Card sx={cardConfig} className="project-modal">
       <CardMedia 
@@ -34,10 +39,14 @@ const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
       />
       <CardContent className='expanded-card-content'>
         <Typography variant='h5' gutterBottom>
-          <Link sx={linkCard} href={url} target='_blank' rel='noreferrer'>
-            {name}
-            <BsBoxArrowUpRight style={{fontSize: '35%',verticalAlign: 'text-top',margin:'5px 0 0 3px'}}/>
-          </Link>
+          {url != '#' ?
+            <Link sx={linkCard} href={url} target='_blank' rel='noreferrer'>
+              {name}
+              <BsBoxArrowUpRight style={{fontSize: '35%',verticalAlign: 'text-top',margin:'5px 0 0 3px'}}/>
+            </Link>
+           :
+            name
+          }
         </Typography>
         <Typography variant='body1' paragraph gutterBottom>
           {descr}
