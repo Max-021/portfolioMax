@@ -7,11 +7,6 @@ import Link from '@mui/material/Link';
 
 import {BsBoxArrowUpRight} from 'react-icons/bs'
 
-import testImg from '../../assets/images/portfolio/testImg.jpg'
-import expandedIngerayProject from '../../assets/images/portfolio/expanded-ingeray-project.png'
-import expandedMaximilianoProject from '../../assets/images/portfolio/expanded-maximiliano-project.png'
-// revisar el componente card de react mui
-
 const cardSx = {
   width:'100%',
   height: 'auto',
@@ -26,10 +21,6 @@ const cardConfig = {
 
 const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
 
-  let titleLink;
-  if(url != "#") {
-    
-  }
   return (
     <Card sx={cardConfig} className="project-modal">
       <CardMedia 
@@ -39,7 +30,7 @@ const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
       />
       <CardContent className='expanded-card-content'>
         <Typography variant='h5' gutterBottom>
-          {url != '#' ?
+          {url !== '#' ?
             <Link sx={linkCard} href={url} target='_blank' rel='noreferrer'>
               {name}
               <BsBoxArrowUpRight style={{fontSize: '35%',verticalAlign: 'text-top',margin:'5px 0 0 3px'}}/>

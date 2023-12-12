@@ -19,6 +19,17 @@ const ContactForm = () => {
     mail: "",
     message: ""
   })
+  const verifyToken = async (token) => {
+    try {
+      let response = await axios.post("http://localhost:2000/post",{
+        secret: process.env.REACT_APP_SECRET_KEY,
+        token,
+      }, console.log(token));
+      return response.data;
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const submitData = async (e) => {
     e.preventDefault();
     const mailInfo = {
@@ -27,26 +38,32 @@ const ContactForm = () => {
       request_message: msgInfo.message,
     }
     //esta parte es del captcha
-    const inputVal = await e.target[0].value;
-    const captchaToken = captchaRef.current.getValue();
-    captchaRef.current.reset();
+    let token = captchaRef.current.getValue();
 
-    await axios.post("http://localhost:2000/post", {inputVal,captchaToken})
-    .then(res => {
-      emailjs.send('service_p2tg3aa','template_abz7cai',mailInfo,'hnVafmaBIaDOWltE9')
-      .then(response => {
-        setMsgInfo({
-          name: '',
-          mail: '',
-          message:'',
-        })
-      })
-      .catch(error => {
-        console.log(error)
-      })
-    })
-    .catch((error) => console.log(error))
+    if(token) {
+      let valid_token = await verifyToken(token);
+      if(valid_token.success) {
+        //si sale bien
+        console.log("success!")
 
+        emailjs.send('service_p2tg3aa','template_abz7cai',mailInfo,'hnVafmaBIaDOWltE9')
+          .then(response => {
+            setMsgInfo({
+              name: '',
+              mail: '',
+              message:'',
+            })
+            // captchaRef.current.reset();
+          })
+          .catch(error => {
+            console.log(error)
+          })
+      }else{
+        console.log("invalid token")
+      }
+    }else{
+      console.log("Robot!")
+    }
   }
   const handleChange = (e) => {
     setMsgInfo({
@@ -76,6 +93,8 @@ const ContactForm = () => {
             sitekey={process.env.REACT_APP_SITE_KEY}
             ref={captchaRef}
           />
+        </motion.div>
+        <motion.div variants={formChildren}>
           <Button type='submit'>Send</Button>
         </motion.div>
       </motion.div>

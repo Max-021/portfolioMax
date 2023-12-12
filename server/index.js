@@ -14,23 +14,24 @@ app.use(express.urlencoded({extended:true}));
 app.use('/',router);
 
 router.post('/post',async (req, res) => {
-    const {captchaToken,inputVal} = req.body;
+    const token = req.body;
     try {
         // Sending secret key and response token to Google Recaptcha API for authentication.
         const response = await axios.post(
-          `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.REACT_APP_SECRET_KEY}&response=${captchaToken}`
+          `https://www.google.com/recaptcha/api/siteverify?secret=6LduMi8pAAAAAFS1HBlRHFGpibKaTbZKBMSkeLzp&response=${token}`
         );
-        console.log(process.env.REACT_APP_SECRET_KEY)
-        // Check response status and send back to the client-side
-        if (response.data.success) {
-            res.send("Human 👨 👩");
-        } else {
-            res.send("Robot 🤖");
-        }
+        
+        return res.status(200).json({
+            success: true,
+            message: 'Token successfully verified',
+            data: response.data
+        })
+
     } catch (error) {
-        // Handle any errors that occur during the reCAPTCHA verification process
-        console.error(error);
-        res.status(500).send("Error verifying reCAPTCHA");
+        return res.status(500).json({
+            success: false,
+            message: "Error verifying token"
+        })
     }
 });
 

@@ -29,8 +29,8 @@ export const projects = [
     },
     {
         url:"#",
-        name:"Also...",
-        descr:"I've worked on other different projects ",
+        name:"Other works",
+        descr:"I've also worked on other different projects A COMPLETAR",
         urlImg: 'portada-also',
         cardImg:expandedPortfolioProject,
         skillInfo:"React, Javascript, Html, Css, Json"
