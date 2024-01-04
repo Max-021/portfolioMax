@@ -85,7 +85,7 @@ const LandpageV2 = () => {
         </motion.svg>
       {/* </div> */}
         <div className='lanpage-title'>
-          <h1>Hi,I'm Max</h1>
+          <h1>Hi,I'm Maxi</h1>
           <div>
             <p className='subtitle'>Software developer</p>
             <motion.div 

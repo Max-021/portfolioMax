@@ -33,6 +33,16 @@ export const formBox = {
     flexDirection: 'column',
 }
 
+export const contactBtn = {
+  color: firstColor,
+  backgroundColor: darkColor,
+  marginTop: '10px',
+  "&:hover": {
+    color: darkColor,
+    outline: `2px solid ${darkColor}`
+  }
+}
+
 export const contactListPosition = {
     height: '150px',
     position: {
@@ -52,10 +62,6 @@ export const modalStyle = {
     width: 500,
     boxShadow: 24,
   }
-// ACA ESTE OBJETO USARLO EN LOS SX DE DISTINTOS COMPONENTES PARA HACER PRUEBAS
-export const borderedBox = {
-    border: '1px solid black'
-}
 export const iconStyle = {
     minWidth: '0px',
     fontSize: '2rem'

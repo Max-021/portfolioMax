@@ -287,6 +287,11 @@ h1{
     width: 550px;
     z-index: 1;
 }
+.contact-form-btn{
+    // margin-top: 14px;
+    // background-color: $darkColor !important;
+    // color: $firstColor !important;
+}
 .contact-text{
     @include mainFont();
     font-weight: bold !important;
@@ -399,6 +404,13 @@ h1{
     background-color: $darkColorShade;
     color: $lightColor;
     padding: 6px !important;
+}
+.expanded-card-skills{
+    font-size: 36px;
+    margin-top: 6px;
+}
+.expanded-card-skills svg{
+    margin-right: 7px;
 }
 .expanded-card-content a {
     color: $firstColor !important;

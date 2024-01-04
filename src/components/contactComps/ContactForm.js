@@ -9,7 +9,7 @@ import emailjs from '@emailjs/browser'
 import { duration } from '@mui/material';
 import axios from 'axios';
 
-// VALIDAR LOS DATOS DEL FORMULARIO ANTES DE ENVIARLO
+import {contactBtn} from '../../styles/muiConfig'
 
 const ContactForm = () => {
 
@@ -95,7 +95,7 @@ const ContactForm = () => {
           />
         </motion.div>
         <motion.div variants={formChildren}>
-          <Button type='submit'>Send</Button>
+          <Button sx={contactBtn} className='contact-form-btn' type='submit'>Send</Button>
         </motion.div>
       </motion.div>
     </Box>

@@ -43,8 +43,10 @@ const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
           {descr}
         </Typography>
         <Typography variant='body2' paragraph>
-          <strong>The skills I used developing this project:</strong>&nbsp;
-          {skillInfo}
+          <strong>Skills I used {name !== 'Other works' ? "developing this project" : ''}:</strong>&nbsp;
+          <p className='expanded-card-skills'>
+            {skillInfo}
+          </p>
         </Typography>
       </CardContent>
     </Card>
