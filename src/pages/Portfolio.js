@@ -5,6 +5,7 @@ import {modalStyle, container} from '../styles/muiConfig';
 import Fhcontainer from '../hoc/Fhcontainer'
 import ProjectCard from '../components/portfolioComps/ProjectCard';
 import ExpandedProjectCard from '../components/portfolioComps/ExpandedProjectCard';
+import ExpandedOtherWorks from '../components/portfolioComps/ExpandedOtherWorks';
 //react mui
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
@@ -75,7 +76,11 @@ const Portfolio = () => {
       >
         <Fade in={open} style={{border: 'none', boxShadow:'none'}} className="project-modal expanded-project-card">
           <Box sx={modalStyle}>
-            <ExpandedProjectCard {...expandedInfo}/>
+            {expandedInfo.name !== 'Other works' ?
+              <ExpandedProjectCard {...expandedInfo}/>
+             :
+              <ExpandedOtherWorks {...expandedInfo}/> 
+            }
           </Box>
         </Fade>
       </Modal>

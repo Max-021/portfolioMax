@@ -66,3 +66,7 @@ export const iconStyle = {
     minWidth: '0px',
     fontSize: '2rem'
 }
+
+export const cardConfig = {
+  backgroundColor: 'transparent'
+}

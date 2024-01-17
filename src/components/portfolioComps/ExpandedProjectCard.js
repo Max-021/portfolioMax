@@ -4,6 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import { cardConfig } from '../../styles/muiConfig';
 
 import {BsBoxArrowUpRight} from 'react-icons/bs'
 
@@ -14,9 +15,6 @@ const cardSx = {
 const linkCard = {
   textDecoration: 'none',
   color: 'black',
-}
-const cardConfig = {
-  backgroundColor: 'transparent'
 }
 
 const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {

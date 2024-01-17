@@ -33,9 +33,8 @@ export const projects = [
     {
         url:"#",
         name:"Other works",
-        descr:"I've also worked on other different projects A COMPLETAR",
+        descr:"I've also worked on other different projects:",
         urlImg: 'portada-also',
-        cardImg:expandedPortfolioProject,
         skillInfo:[<FaJs/>, <FaHtml5/>, <FaCss3Alt/>, <FaPhp/>, <SiMysql/>]
     },
 ]
