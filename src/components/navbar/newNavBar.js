@@ -1,7 +1,7 @@
 import React from 'react'
 import {motion} from 'framer-motion'
 
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 import links from '../../data/navData';
 
@@ -18,9 +18,9 @@ const NavBar = () => {
     >
           <nav className='nav-list'>
               {links.map((link,index) => (
-                <Link key={index} to={link.url} className='nav-list-item'>
+                <NavLink key={index} to={link.url} className={({ isActive }) => (isActive ? 'nav-list-item active_navlink' : 'nav-list-item')} end>
                     {link.name}
-                  </Link>
+                  </NavLink>
               ))}
           </nav>
     </motion.div>

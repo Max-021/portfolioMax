@@ -1,4 +1,5 @@
 import React, { useState,useEffect } from 'react'
+import axios from 'axios';
 import Box  from '@mui/material/Box'
 import Stack from '@mui/material/Stack';
 import Divider from '@mui/material/Divider';
@@ -30,10 +31,15 @@ const Contact = () => {
       }, 1500);
     }
   }
+  const awakeServer = async () => {
+    const awakeServer = await axios.post('"http://localhost:2000/wake', {data: 'server on'});
+    console.log(awakeServer)
+  }
 
   useEffect(()=> {
     const navHeight = document.querySelector('.nav-container').clientHeight;
     setCustomHeight(navHeight);
+
   }, [])
 
 

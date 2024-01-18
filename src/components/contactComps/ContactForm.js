@@ -53,7 +53,7 @@ const ContactForm = () => {
               mail: '',
               message:'',
             })
-            // captchaRef.current.reset();
+            captchaRef.current.reset();
           })
           .catch(error => {
             console.log(error)

@@ -13,6 +13,22 @@ app.use(express.urlencoded({extended:true}));
 
 app.use('/',router);
 
+router.post('/wake', async (req, res) => {
+    try {
+        console.log(req.body)
+        return res.status(200).json({
+            success:true,
+            message: 'Awaken!',
+            data: 'Awaken!'
+        })
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: 'failed'
+        })
+    }
+})
+
 router.post('/post',async (req, res) => {
     const token = req.body;
     try {
