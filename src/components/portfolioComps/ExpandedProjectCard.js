@@ -13,8 +13,12 @@ const cardSx = {
   height: 'auto',
 }
 const linkCard = {
-  textDecoration: 'none',
+  textDecoration: 'underline',
   color: 'black',
+  transition: 'all 0.6s',
+  "&:hover": {
+    color: '#EEF0EB !important',
+  }
 }
 
 const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {

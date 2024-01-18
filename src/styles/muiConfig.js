@@ -34,7 +34,7 @@ export const formBox = {
 }
 
 export const contactBtn = {
-  color: firstColor,
+  color: lightColor,
   backgroundColor: darkColor,
   marginTop: '10px',
   "&:hover": {

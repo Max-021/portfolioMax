@@ -30,7 +30,7 @@ const ExpandedOtherWorks = ({name,descr, skillInfo}) => {
         </Typography>
         <Typography variant='body1' paragraph>
         - I worked with&nbsp;
-        <Link href='http://www.meditech.com.ar/' target='_blank' rel='noreferrer'>
+        <Link className='expanded-card-link' href='http://www.meditech.com.ar/' target='_blank' rel='noreferrer'>
           Meditech
           <BsBoxArrowUpRight style={{fontSize: '35%',verticalAlign: 'text-top',margin:'5px 0 0 3px'}}/>
         </Link>&nbsp;
