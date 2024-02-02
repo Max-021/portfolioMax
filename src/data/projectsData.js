@@ -9,10 +9,10 @@ export const projects = [
     {
         url:"https://www.maximilianohombres.com.ar",
         name:"Maximiliano Hombres",
-        descr:"This is a website with a simple and clear design, developed to provide quick and direct information about the shop.It is one of my first projects. I am currently developing a new version for this website using react.",
+        descr:"This is a website with a simple and clear design, developed to provide quick and direct information about the shop.It is one of my first projects, now remade in 2024.",
         urlImg:'portada-maximiliano',
         cardImg:expandedMaximilianoProject,
-        skillInfo: [<FaHtml5/>, <FaCss3Alt/>, <FaJs/>]
+        skillInfo: [<FaReact/>,<FaSass/>,<FaHtml5/>, <FaCss3Alt/>, <FaJs/>]
     },
     {
         url:"https://www.ingeray.com.ar",
@@ -28,7 +28,7 @@ export const projects = [
         descr:"This is my personal portfolio! I designed it with the purpose of showing part of my skills at web development, I made it using mainly react.",
         urlImg: 'portada-portfolio',
         cardImg:expandedPortfolioProject,
-        skillInfo:[<FaReact/>, <FaJs/>, <FaHtml5/>, <FaCss3Alt/>],
+        skillInfo:[<FaReact/>, <FaSass/>, <FaJs/>, <FaHtml5/>, <FaCss3Alt/>],
     },
     {
         url:"#",
