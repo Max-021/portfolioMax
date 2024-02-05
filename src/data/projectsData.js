@@ -9,10 +9,12 @@ export const projects = [
     {
         url:"https://www.maximilianohombres.com.ar",
         name:"Maximiliano Hombres",
-        descr:"This is a website with a simple and clear design, developed to provide quick and direct information about the shop.It is one of my first projects, now remade in 2024.",
+        descr:"This is a website with a simple and clear design, developed to provide quick and direct information about the shop.It is one of my first projects, I'm making a new version of this site for 2024",
+        // descr:"This is a website with a simple and clear design, developed to provide quick and direct information about the shop.It is one of my first projects, now remade in 2024.",
         urlImg:'portada-maximiliano',
         cardImg:expandedMaximilianoProject,
-        skillInfo: [<FaReact/>,<FaSass/>,<FaHtml5/>, <FaCss3Alt/>, <FaJs/>]
+        skillInfo: [<FaHtml5/>, <FaCss3Alt/>, <FaJs/>]
+        // skillInfo: [<FaReact/>,<FaSass/>,<FaHtml5/>, <FaCss3Alt/>, <FaJs/>]
     },
     {
         url:"https://www.ingeray.com.ar",
