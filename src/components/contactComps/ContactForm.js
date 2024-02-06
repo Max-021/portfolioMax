@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 import {motion} from 'framer-motion'
 import { formBox,container, formChildren } from '../../styles/muiConfig'
 import emailjs from '@emailjs/browser'
-import { duration } from '@mui/material';
 import axios from 'axios';
 
 import {contactBtn} from '../../styles/muiConfig'
@@ -21,10 +20,12 @@ const ContactForm = () => {
   })
   const verifyToken = async (token) => {
     try {
-      let response = await axios.post("http://localhost:2000/post",{
-        secret: process.env.REACT_APP_SECRET_KEY,
+      let response = await axios.post("https://servercaptcha.onrender.com/post",{
+      // let response = await axios.post("http://localhost:2000/post",{
+        secret: process.env.REACT_PROD_SECRET_KEY,
+        // secret: process.env.REACT_APP_SECRET_KEY,
         token,
-      }, console.log(token));
+      });
       return response.data;
     } catch (error) {
       console.log(error)
