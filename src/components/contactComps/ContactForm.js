@@ -21,7 +21,7 @@ const ContactForm = () => {
   const verifyToken = async (token) => {
     try {
       let response = await axios.post(process.env.NODE_ENV === 'production' ? "https://servercaptcha.onrender.com/post" : "http://localhost:2000/post" ,{
-        secret: process.env.NODE_ENV === 'production' ? process.env.REACT_PROD_SECRET_KEY : process.env.REACT_APP_SECRET_KEY,
+        secret: process.env.REACT_APP_SECRET_KEY,
         token,
       });
       return response.data;
@@ -89,7 +89,7 @@ const ContactForm = () => {
         </motion.div>
         <motion.div variants={formChildren}>
           <ReCAPTCHA 
-            sitekey={process.env.NODE_ENV === 'production' ? process.env.REACT_PROD_SITE_KEY : process.env.REACT_APP_SITE_KEY}
+            sitekey={process.env.REACT_APP_SITE_KEY}
             ref={captchaRef}
           />
         </motion.div>
