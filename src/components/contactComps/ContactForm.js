@@ -8,9 +8,14 @@ import { formBox,container, formChildren } from '../../styles/muiConfig'
 import emailjs from '@emailjs/browser'
 import axios from 'axios';
 
-import {contactBtn} from '../../styles/muiConfig'
+import { FaSpinner } from "react-icons/fa";
+import {contactBtn, sendingBtn, sentBtn} from '../../styles/muiConfig'
 
 const ContactForm = () => {
+
+  const sendTxtDefault = 'SEND';
+  const sendingTxt = 'Sending email...';
+  const sentTxt = 'Email sent!';
 
   const captchaRef = useRef(null)
   const [msgInfo, setMsgInfo] = useState({
@@ -18,6 +23,7 @@ const ContactForm = () => {
     mail: "",
     message: ""
   })
+  const [sendText, setSendText] = useState(sendTxtDefault)
   const verifyToken = async (token) => {
     try {
       let response = await axios.post(process.env.NODE_ENV === 'production' ? "https://servercaptcha.onrender.com/post" : "http://localhost:2000/post" ,{
@@ -31,6 +37,7 @@ const ContactForm = () => {
   }
   const submitData = async (e) => {
     e.preventDefault();
+    setSendText(sendingTxt)
     const mailInfo = {
       request_name: msgInfo.name,
       request_mail: msgInfo.mail,
@@ -53,6 +60,10 @@ const ContactForm = () => {
               message:'',
             })
             captchaRef.current.reset();
+            setSendText('Email sent!')
+            setTimeout(() => {
+              setSendText('SEND')
+            }, 3000);
           })
           .catch(error => {
             console.log(error)
@@ -94,7 +105,10 @@ const ContactForm = () => {
           />
         </motion.div>
         <motion.div variants={formChildren}>
-          <Button sx={contactBtn} className='contact-form-btn' type='submit'>Send</Button>
+          <Button sx={sendText === sendTxtDefault ? contactBtn : sendText === sendingTxt ? sendingBtn : sendText === sentTxt ? sentBtn : contactBtn} className='contact-form-btn' type='submit'>
+            {sendText === sendingTxt ? <FaSpinner className='loadIcon'/> : null}
+            {sendText}
+          </Button>
         </motion.div>
       </motion.div>
     </Box>

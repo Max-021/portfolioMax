@@ -302,6 +302,9 @@ h1{
     color: $secondColorShade;
     font-weight: bold !important;
 }
+.loadIcon{
+    animation: rotation 2s infinite linear;
+}
 
 .contactListPosition {
     // height: 150px;
@@ -317,8 +320,8 @@ h1{
 }
 .copiedAlert{
     position: absolute;
-    bottom: 1%;
-    right: 1%;
+    bottom: 52%;
+    right: 68px;
 }
 //portfolio section
 .portfolio-section {
@@ -495,7 +498,8 @@ h1{
         padding-top: 36px !important;
     }
     .copiedAlert{
-        top: 1%;
+        bottom: 60px;
+        right: 1%;
     }
     //portfolio section
     .project-card {
@@ -510,5 +514,13 @@ h1{
     .custom-bkg{
         top: auto;
         bottom: 0 !important;
+    }
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg)
+    }
+    to {
+        transform: rotate(359deg);
     }
 }

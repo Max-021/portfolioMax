@@ -2,6 +2,7 @@ export const firstColor = "#FFB100"
 export const secondColor = "#9C528B"
 export const darkColor = "#153243"
 export const lightColor = "#EEF0EB"
+export const successColor = '#2e7d32'
 
 //Acá estan las configuraciones para el framer que sean comunes
 export const container = {
@@ -37,10 +38,24 @@ export const contactBtn = {
   color: lightColor,
   backgroundColor: darkColor,
   marginTop: '10px',
+  textTransform: 'none',
   "&:hover": {
     color: darkColor,
     outline: `2px solid ${darkColor}`
   }
+}
+export const sendingBtn = {
+  marginTop: '10px',
+  backgroundColor: 'transparent',
+  color: secondColor,
+  outline: `2px solid ${secondColor}`,
+  textTransform: 'none',
+}
+export const sentBtn = {
+  marginTop: '10px',
+  backgroundColor: successColor,
+  color: lightColor,
+  textTransform: 'none',
 }
 
 export const contactListPosition = {

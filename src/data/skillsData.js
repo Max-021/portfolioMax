@@ -11,7 +11,6 @@ export const skillGroup = [
             ['Css', <FaCss3Alt/>],
             ['Sass', <FaSass/>],
             ['Vue', <FaVuejs/>],
-            ['Php', <FaPhp/>],
         ]),
     },
     {
