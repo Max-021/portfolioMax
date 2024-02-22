@@ -28,7 +28,7 @@ const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
       <CardMedia 
         component={'img'}
         sx={cardSx}
-        image={cardImg} 
+        image={cardImg}
       />
       <CardContent className='expanded-card-content'>
         <Typography variant='h5' gutterBottom>

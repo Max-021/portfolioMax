@@ -1,23 +1,11 @@
 @font-face {
   font-family: "serifFont";
-  src: url("../assets/fonts/Quattrocento-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/Quattrocento-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "sansFont";
-  src: url("../assets/fonts/QuattrocentoSans-Regular.ttf") format("truetype");
+  src: url("../assets/fonts/QuattrocentoSans-Regular.woff2") format("woff2");
 }
-.linksNav {
-  text-decoration: none;
-  font-size: 110%;
-  color: hsl(215deg, 70%, 20%);
-  transition: all 0.7s;
-}
-
-.linksNav:hover {
-  transform: scale(1.2);
-  color: hsl(215deg, 70%, 30%);
-}
-
 .linkWrapper {
   width: 50%;
   height: 50%;
@@ -50,15 +38,69 @@ a {
 .general {
   font-family: serifFont, Times, serif !important;
   font-size: 100%;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
 }
 
-.landpage-container {
-  min-height: 100vh;
+.nav-container {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: hsla(200deg, 29%, 10%, 0.65);
+  backdrop-filter: blur(3px);
+}
+
+.nav-list {
+  padding: 18px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+
+.nav-list-item {
+  position: relative;
+  color: #EEF0EB;
+  font-family: sansFont, Times, serif !important;
+  font-size: 100%;
+  transition: all 0.7s;
+}
+.nav-list-item:hover {
+  color: #FFB100;
+}
+
+.active_navlink {
+  color: #FFB100;
+}
+
+.nav-list-item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  margin: -3px 0;
+  background-color: #FFB100;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.7s ease-in-out 0s;
+  z-index: 100;
+}
+
+.nav-list-item:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 .main-container {
-  padding-top: 64px;
-  min-height: calc(100vh - 64px);
+  height: fit-content;
+  position: relative;
 }
 
 .landpage-section {
@@ -82,6 +124,91 @@ a {
   flex-wrap: wrap;
 }
 
+.landpage-section-test {
+  min-height: 100vh;
+  width: 100%;
+  background: #EEF0EB;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.lanpage-title {
+  position: absolute;
+  top: 8%;
+  left: 4%;
+  font-family: sansFont, Times, serif !important;
+  font-size: 100%;
+}
+
+.landpage-screen {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 72%;
+  aspect-ratio: 16/8;
+  overflow: hidden;
+}
+
+.landpage-icon {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.landpage-rect {
+  stroke-width: 20px;
+  stroke-linecap: round;
+  fill: transparent;
+}
+
+h1 {
+  color: #9C528B;
+  font-size: 80px;
+  margin: 0;
+}
+
+.subtitle {
+  color: #EEF0EB;
+  text-align: start;
+  margin-top: 4px;
+  margin-left: 6px;
+  z-index: 5;
+  position: absolute;
+  width: 250px;
+  font-family: serifFont, Times, serif !important;
+  font-size: 100%;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+.subtitle-bkg {
+  color: #EEF0EB;
+  z-index: 1;
+  height: 25px;
+  width: 225px;
+  background: #9C528B;
+}
+
+.landpage-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 48px;
+  right: 72px;
+  gap: 24px;
+  font-size: 350%;
+}
+
+.landpage-nav > * {
+  border-radius: 10%;
+  backdrop-filter: blur(7px);
+  padding: 10px;
+}
+
 .about-section {
   background: rgb(29, 71, 96);
   background: radial-gradient(circle, rgb(29, 71, 96) 0%, rgb(26, 39, 47) 90%);
@@ -103,6 +230,7 @@ a {
 
 .about-info {
   width: 450px;
+  min-height: 380px;
 }
 
 .about-skills {
@@ -173,17 +301,56 @@ a {
   background-color: #EEF0EB;
 }
 
+.custom-bkg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #153243;
+}
+
 .top {
   position: absolute;
   height: 0;
   width: 0;
   top: 0;
-  margin-top: 64px;
   border-left: 50vw solid transparent;
   border-right: 50vw solid transparent;
   border-bottom: 150px solid transparent;
   border-top: 180px solid hsl(84deg, 24%, 70%);
   opacity: 0.2;
+}
+
+.form-container {
+  width: 550px;
+  z-index: 1;
+}
+
+.contact-text {
+  font-family: serifFont, Times, serif !important;
+  font-size: 100%;
+  font-weight: bold !important;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  min-height: 50px;
+}
+
+.contact-title {
+  font-family: sansFont, Times, serif !important;
+  font-size: 100%;
+  color: hsl(314deg, 55%, 40%);
+  font-weight: bold !important;
+}
+
+.loadIcon {
+  animation: rotation 2s infinite linear;
+}
+
+.contactListPosition {
+  position: absolute;
+  right: 0;
+  top: calc((100vh - 102px) / 2);
+  padding: 0;
+  overflow: hidden;
 }
 
 .contactIcons {
@@ -195,8 +362,8 @@ a {
 
 .copiedAlert {
   position: absolute;
-  bottom: 1%;
-  right: 1%;
+  bottom: 52%;
+  right: 68px;
 }
 
 .portfolio-section {
@@ -204,12 +371,16 @@ a {
 }
 
 .portfolio-upper-section {
-  height: 150px;
   background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+}
+
+.portfolio-main-img {
+  width: 100%;
+  height: auto;
 }
 
 .portfolio-title {
@@ -258,37 +429,46 @@ a {
   margin-top: 12px;
 }
 
-.portfolio-project {
-  background-image: url("../assets/images/portfolio/portfolioproject.png");
+.portada-portfolio {
+  background-image: url("../assets/images/portfolio/portadaportfolio.webp");
 }
 
-.ingeray-project {
-  background-image: url("../assets/images/portfolio/portadaingeray.png");
+.portada-ingeray {
+  background-image: url("../assets/images/portfolio/portadaingeray.webp");
 }
 
-.portfolio-project,
-.ingeray-project {
+.portada-maximiliano {
+  background-image: url("../assets/images/portfolio/portadamaximiliano.webp");
+}
+
+.portada-also {
+  background-image: url("../assets/images/portfolio/portada-also.webp");
+}
+
+.project-img {
   position: relative;
   width: 100%;
   height: 100%;
   background-size: cover;
   transition: 0.7s all;
-  transform: scale(1.4);
+  transform: scale(1.1);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
 }
 
-.portfolio-project:hover,
-.ingeray-project:hover {
+.project-img:hover {
   transform: scale(1);
 }
-.portfolio-project:hover .project-description,
-.ingeray-project:hover .project-description {
+.project-img:hover .project-description {
   opacity: 1;
   transform: translateY(0);
   color: #EEF0EB;
+}
+
+.project-modal:focus-visible {
+  outline: none;
 }
 
 .expanded-card-content {
@@ -297,12 +477,112 @@ a {
   padding: 6px !important;
 }
 
+.expanded-card-skills {
+  font-size: 36px;
+  margin-top: 6px;
+}
+
+.expanded-card-skills svg {
+  margin-right: 7px;
+}
+
 .expanded-card-content a {
   color: #FFB100 !important;
+}
+
+.expanded-card-link {
+  color: #FFB100 !important;
+  text-decoration-color: #FFB100 !important;
+  transition: all 0.6s;
+}
+.expanded-card-link:hover {
+  color: #EEF0EB !important;
+  text-decoration-color: #EEF0EB !important;
 }
 
 .card-link {
   text-decoration: none;
   color: black;
   padding-bottom: 12px;
+}
+
+@media screen and (max-width: 625px) {
+  .expanded-project-card {
+    max-width: 85vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .landpage-screen {
+    width: 90%;
+    overflow: visible;
+  }
+  h1 {
+    font-size: 60px;
+  }
+  .landpage-nav {
+    right: 5%;
+    bottom: 2%;
+  }
+  .about-section {
+    flex-direction: column;
+  }
+  .about-position {
+    flex-direction: column;
+    padding-top: 43px;
+    padding-bottom: 86px;
+    gap: 48px;
+    width: 80%;
+  }
+  .about-skills-position {
+    align-self: center;
+  }
+  .about-info {
+    width: 100%;
+  }
+  /*
+
+  contact section
+
+  */
+  .contact-section {
+    padding-top: 0;
+    flex-direction: column;
+  }
+  .top {
+    display: none;
+  }
+  .contact-content {
+    align-self: flex-start;
+    padding-top: 48px;
+  }
+  .form-container {
+    width: 80%;
+  }
+  .contactIcons {
+    flex-direction: row;
+    padding-top: 36px !important;
+  }
+  .copiedAlert {
+    bottom: 60px;
+    right: 1%;
+  }
+  .project-card {
+    width: 50%;
+  }
+  .nav-container {
+    position: fixed;
+    bottom: 0;
+  }
+  .custom-bkg {
+    top: auto;
+    bottom: 0 !important;
+  }
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }

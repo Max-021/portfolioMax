@@ -37,7 +37,7 @@ const Portfolio = () => {
         animate={{opacity:1}}
         transition={{duration:1.5, ease: 'easeIn'}}
       >
-        <img className='portfolio-main-img' src={require(`../assets/images/portfolio/banner.png`)} alt='main-img'/>
+        <img className='portfolio-main-img' src={require(`../assets/images/portfolio/banner.webp`)} alt='main-img'/>
       </motion.div>
       <div className='portfolio-second-section'>
         <motion.div variants={container} initial='hidden' animate='show' className='projects-container'>

@@ -1,10 +1,10 @@
 @font-face {
     font-family: "serifFont";
-    src: url('../assets/fonts/Quattrocento-Regular.ttf')format('truetype');
+    src: url('../assets/fonts/Quattrocento-Regular.woff2')format('woff2');
 }
 @font-face {
     font-family: 'sansFont';
-    src: url('../assets/fonts/QuattrocentoSans-Regular.ttf')format('truetype');
+    src: url('../assets/fonts/QuattrocentoSans-Regular.woff2')format('woff2');
 }
 
 //mixins
@@ -371,16 +371,16 @@ h1{
 }
 
 .portada-portfolio {
-    background-image: url('../assets/images/portfolio/portadaportfolio.png');
+    background-image: url('../assets/images/portfolio/portadaportfolio.webp');
 }
 .portada-ingeray {
-    background-image: url('../assets/images/portfolio/portadaingeray.png');
+    background-image: url('../assets/images/portfolio/portadaingeray.webp');
 }
 .portada-maximiliano{
-    background-image: url('../assets/images/portfolio/portadamaximiliano.png');
+    background-image: url('../assets/images/portfolio/portadamaximiliano.webp');
 }
 .portada-also{
-    background-image: url('../assets/images/portfolio/portada-also.png');
+    background-image: url('../assets/images/portfolio/portada-also.webp');
 }
 .project-img{
     position: relative;

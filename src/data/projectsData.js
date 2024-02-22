@@ -1,9 +1,9 @@
 import {FaJs, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaVuejs, FaLaravel, FaPhp, FaSass} from 'react-icons/fa'
 import {SiMongodb, SiMysql} from 'react-icons/si'
 
-import expandedIngerayProject from '../assets/images/portfolio/expanded-ingeray-project.png'
+import expandedIngerayProject from '../assets/images/portfolio/expanded-ingeray-project.webp'
 import expandedMaximilianoProject from '../assets/images/portfolio/expanded-maximiliano-project.png'
-import expandedPortfolioProject from '../assets/images/portfolio/expanded-portfolio-project.png'
+import expandedPortfolioProject from '../assets/images/portfolio/expanded-portfolio-project.webp'
 
 export const projects = [
     {
