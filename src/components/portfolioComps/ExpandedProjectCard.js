@@ -33,7 +33,7 @@ const ExpandedProjectCard = ({url,name,descr,cardImg,skillInfo}) => {
       <CardContent className='expanded-card-content'>
         <Typography variant='h5' gutterBottom>
           {url !== '#' ?
-            <Link sx={linkCard} href={url} target='_blank' rel='noreferrer'>
+            <Link sx={linkCard} href={url} target='_blank' rel='noopener noreferrer'>
               {name}
               <BsBoxArrowUpRight style={{fontSize: '35%',verticalAlign: 'text-top',margin:'5px 0 0 3px'}}/>
             </Link>

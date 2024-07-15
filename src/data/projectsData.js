@@ -2,19 +2,17 @@ import {FaJs, FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaVuejs, FaLaravel, FaPhp, 
 import {SiMongodb, SiMysql} from 'react-icons/si'
 
 import expandedIngerayProject from '../assets/images/portfolio/expanded-ingeray-project.webp'
-import expandedMaximilianoProject from '../assets/images/portfolio/expanded-maximiliano-project.png'
+import expandedMaximilianoProject from '../assets/images/portfolio/expanded-maximiliano-project.webp'
 import expandedPortfolioProject from '../assets/images/portfolio/expanded-portfolio-project.webp'
 
 export const projects = [
     {
         url:"https://www.maximilianohombres.com.ar",
         name:"Maximiliano Hombres",
-        descr:"This is a website with a simple and clear design, developed to provide quick and direct information about the shop.It is one of my first projects, I'm making a new version of this site for 2024",
-        // descr:"This is a website with a simple and clear design, developed to provide quick and direct information about the shop.It is one of my first projects, now remade in 2024.",
+        descr:"This is a website with a simple and clear design, developed to provide quick and direct information about the shop.It is one of my first projects, now remade in 2024",
         urlImg:'portada-maximiliano',
         cardImg:expandedMaximilianoProject,
-        skillInfo: [<FaHtml5/>, <FaCss3Alt/>, <FaJs/>]
-        // skillInfo: [<FaReact/>,<FaSass/>,<FaHtml5/>, <FaCss3Alt/>, <FaJs/>]
+        skillInfo: [<FaReact/>, <FaSass/>, <FaJs/>, <FaHtml5/>, <FaCss3Alt/>]
     },
     {
         url:"https://www.ingeray.com.ar",
